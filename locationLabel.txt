@@ -1,0 +1,500 @@
+Honningsvåg, Norway
+Nagpur, India
+Ludhiana, India
+Salzburg, Austria
+Thessaloniki, Greece
+Ōtsu, Japan
+Tokushima, Japan
+Belo Horizonte, Brazil
+Pierre, United States
+Kraków, Poland
+Brasília, Brazil
+Campo Grande, Brazil
+Greenwich, United Kingdom
+Norrköping, Sweden
+León, Mexico
+Santa Cruz de Tenerife, Spain
+Damascus, Syria
+Ciudad Bolívar, Venezuela
+Hilo, United States
+Huambo, Angola
+Palmas, Brazil
+Port Elizabeth, South Africa
+Tucson, United States
+Yamagata, Japan
+Johannesburg, South Africa
+Toronto, Canada
+Ibiza, Spain
+Cancún, Mexico
+Hai Phong, Vietnam
+Shenyang,China
+Kigali, Rwanda
+Lima, Peru
+Pyongyang, North Korea
+Nashville, United States
+Balikpapan, Indonesia
+Tezpur, India
+Shimla, India
+Hakodate, Japan
+Helena, United States
+Xining,China
+Eureka, Canada
+Medina, Saudi Arabia
+Qiqihar,China
+St. George's, Grenada
+St. John's, Canada
+Chittagong, Bangladesh
+Shijiazhuang,China
+Banjul, Gambia
+Helsinki, Finland
+Matsuyama, Japan
+Östersund, Sweden
+Punta Arenas, Chile
+Peshawar, Pakistan
+Beirut, Lebanon
+Chongqing,China
+Alofi, New Zealand
+Graz, Austria
+Aracaju, Brazil
+Guatemala City, Guatemala
+Springfield, United States
+Pune, India
+Denpasar, Indonesia
+Coventry, United Kingdom
+Odense, Denmark
+Reno, United States
+Shillong, India
+Yaren District, Nauru
+Johor Bahru, Malaysia
+Rochester, United States
+Tiksi, Russia
+Rovaniemi, Finland
+Portland, United States
+Chelyabinsk, Russia
+Catania, Italy
+New York City, United States
+Tel Aviv, Israel
+Cagliari, Italy
+Rotterdam, Netherlands
+Lomé, Togo
+Qaqortoq, Denmark
+Veracruz, Mexico
+Mogadishu, Somalia
+Valencia, Spain
+Eilat, Israel
+Ulan Bator, Mongolia
+Dalian,China
+Medan, Indonesia
+Antananarivo, Madagascar
+Wichita, United States
+Durango, Mexico
+Semarang, Indonesia
+Chandigarh, India
+Makati, Philippines
+Winchester, United Kingdom
+Utsunomiya, Japan
+Iloilo City, Philippines
+Georgetown, Guyana
+Rostov-on-Don, Russia
+Puerto Vallarta, Mexico
+Rabat, Morocco
+Malang, Indonesia
+Koulikoro, Mali
+Nouméa, France
+Bahía Blanca, Argentina
+Pekanbaru, Indonesia
+Majuro, Marshall Islands
+Ibadan, Nigeria
+Mérida, Mexico
+Munich, Germany
+Nottingham, United Kingdom
+São José do Rio Preto, Brazil
+Padang, Indonesia
+Blantyre, Malawi
+Stockholm, Sweden
+Yakutsk, Russia
+Kanazawa, Japan
+Trenton, United States
+Matsue, Japan
+Multan, Pakistan
+Oslo, Norway
+Riverside, United States
+Albuquerque, United States
+Guayaquil, Ecuador
+Bergen, Norway
+Juiz de Fora, Brazil
+Cleveland, United States
+Suva, Fiji
+Agra, India
+Montreal, Canada
+Vadsø, Norway
+Flensburg, Germany
+Hobart, Australia
+Amman, Jordan
+Madrid, Spain
+Shizuoka, Japan
+Bridgetown, Barbados
+Trelew, Argentina
+Obihiro, Japan
+Florence, Italy
+Poços de Caldas, Brazil
+Lobamba, Swaziland
+Hamilton, United Kingdom
+Pristina, Serbia
+Iquitos, Peru
+Prague, Czech Republic
+Lillehammer, Norway
+Abu Dhabi, United Arab Emirates
+Malabo, Equatorial Guinea
+Fort Wayne, United States
+Wellington, New Zealand
+Dodoma, Tanzania
+Sinop, Brazil
+Djibouti, Djibouti
+Cebu City, Philippines
+Handan,China
+Recife, Brazil
+Port Hedland, Australia
+Toyama, Japan
+Simferopol, Ukraine
+Umeå, Sweden
+La Paz, Bolivia
+Assis, Brazil
+Dongguan,China
+Baku, Azerbaijan
+Harare, Zimbabwe
+Cluj-Napoca, Romania
+San Juan, United States
+Sendai, Japan
+Stjørdal, Norway
+London, United Kingdom
+Lyon, France
+Basseterre, Saint Kitts and Nevis
+Hargeisa, Somalia
+Zhengzhou,China
+Cockburn Town, United Kingdom
+Aomori, Japan
+Cayenne, France
+Cologne, Germany
+Sacramento, United States
+Murmansk, Russia
+Alert, Canada
+Horta, Portugal
+Kumamoto, Japan
+Indianapolis, United States
+Saint John, Canada
+Yellowknife, Canada
+Maracaibo, Venezuela
+Linz, Austria
+Wonsan, North Korea
+Orlando, United States
+Luxembourg, Luxembourg
+Dakar, Senegal
+Mersin, Turkey
+Enschede, Netherlands
+Luleå, Sweden
+Sapporo, Japan
+Lahti, Finland
+Nassau, Bahamas
+Jayapura, Indonesia
+Ilhéus, Brazil
+Lilongwe, Malawi
+Shenzhen,China
+Istanbul, Turkey
+Kingston, Jamaica
+São José dos Campos, Brazil
+Columbia, United States
+Jamestown, United Kingdom
+Kano, Nigeria
+Trondheim, Norway
+Panama City, Panama
+Philadelphia, United States
+Akureyri, Iceland
+Pelotas, Brazil
+Fort-de-France, France
+Tampico, Mexico
+Acapulco, Mexico
+Göteborg, Sweden
+Natal, Brazil
+Sri Jayawardenapura-Kotte, Sri Lanka
+Kathmandu,  Nepal
+Ndola, Zambia
+Chicago, United States
+Cardiff, United Kingdom
+Nukus, Uzbekistan
+Basel, Switzerland
+Southampton, United Kingdom
+Victoria, Canada
+Sitka, United States
+Rome, Italy
+Ahmedabad, India
+The Valley, United Kingdom
+Dammam, Saudi Arabia
+Jerusalem, Israel
+Basra, Iraq
+Iqaluit, Canada
+Qingdao,China
+Lahore, Pakistan
+Sekondi-Takoradi, Ghana
+Darwin, Australia
+Ho Chi Minh City, Vietnam
+Exeter, United Kingdom
+Moundou, Chad
+Charleston, United States
+Toulouse, France
+Nantes, France
+Austin, United States
+Hanga Roa, Chile
+Lagos, Nigeria
+Salt Lake City, United States
+Dibrugarh, India
+Bangalore, India
+Baghdad, Iraq
+Tórshavn, Denmark
+Mendoza, Argentina
+Cincinnati, United States
+Nelson, New Zealand
+Cartagena, Colombia
+Labasa, Fiji
+Saint-Pierre, France
+Macapá, Brazil
+Berlin, Germany
+Kiev, Ukraine
+Valdivia, Chile
+Vaasa, Finland
+Konya, Turkey
+Minneapolis, United States
+Baltimore, United States
+Vientiane, Laos
+The Hague, Netherlands
+Krasnodar, Russia
+Wollongong, Australia
+Xi'an,China
+Makassar, Indonesia
+Nzérékoré, Guinea
+Messina, Italy
+Akita, Japan
+Brisbane, Australia
+Accra, Ghana
+Gold Coast, Australia
+Praia, Cape Verde
+Aarhus, Denmark
+Skopje, Macedonia
+Boa Vista, Brazil
+Utrecht, Netherlands
+Melbourne, Australia
+Incheon, South Korea
+Yerevan, Armenia
+Kirkuk, Iraq
+Porto Velho, Brazil
+San Salvador, El Salvador
+Casablanca, Morocco
+Turku, Finland
+Yamaguchi, Japan
+Monaco, Monaco
+Perm, Russia
+Nemuro, Japan
+Cotonou, Benin
+Memphis, United States
+Trivandrum, India
+Bratsk, Russia
+Moscow, United States
+Saipan, United States
+Cusco, Peru
+Bobo-Dioulasso, Burkina Faso
+Sudbury, Canada
+Zapopan, Mexico
+Chişinău, Moldova
+Port Moresby, Papua New Guinea
+Geneva, Switzerland
+Sana'a, Yemen
+Cape Town, South Africa
+Leipzig, Germany
+Avarua, New Zealand
+Vilnius, Lithuania
+Changchun,China
+Thunder Bay, Canada
+Santa Barbara, United States
+Kōfu, Japan
+Tiraspol, Moldova
+Port-au-Prince, Haiti
+Qaanaaq, Denmark
+Mobile, United States
+Yarmouth, Canada
+Tuktoyaktuk, Canada
+Washington, United States
+Kanpur, India
+Santa Cruz de la Sierra, Bolivia
+Adamstown, United Kingdom
+Dublin, Ireland
+Gifu, Japan
+Daegu, South Korea
+Mecca, Saudi Arabia
+Siem Reap, Cambodia
+Huế, Vietnam
+San Antonio, United States
+Chiang Mai, Thailand
+Geelong, Australia
+Taiyuan,China
+Kristiansand, Norway
+Townsville, Australia
+Craiova, Romania
+Bremen, Germany
+Lhasa,China
+Suez, Egypt
+Harbin,China
+Río Gallegos, Argentina
+Norwich, United Kingdom
+Grise Fiord, Canada
+Kota Bharu, Malaysia
+Chinandega, Nicaragua
+Chennai (Madras), India
+Maastricht, Netherlands
+Libreville, Gabon
+Kampala, Uganda
+Thimphu, Bhutan
+Victoria, Seychelles
+Bern, Switzerland
+Donetsk, Ukraine
+Iquique, Chile
+Fort McMurray, Canada
+Norilsk, Russia
+Dunedin, New Zealand
+Coihaique, Chile
+Voronezh, Russia
+Shigatse,China
+Lusaka, Zambia
+Garanhuns, Brazil
+Campinas, Brazil
+Birkirkara, Malta
+Ny-Ålesund, Norway
+Tijuana, Mexico
+Kushiro, Japan
+Magadan, Russia
+Windhoek, Namibia
+Seoul, South Korea
+Port of Spain, Trinidad and Tobago
+Port Louis, Mauritius
+Ushuaia, Argentina
+Ponta Delgada, Portugal
+Saskatoon, Canada
+Hannover, Germany
+Portsmouth, United Kingdom
+Niamey, Niger
+Dushanbe, Tajikistan
+Singapore, Singapore
+Rosario, Argentina
+Zürich, Switzerland
+Riga, Latvia
+Zaragoza, Spain
+Mata-Utu, France
+Sobral, Brazil
+Plymouth, United Kingdom
+Udon Thani, Thailand
+Basse-Terre, France
+Nagoya, Japan
+Santa Fe, United States
+Manama, Bahrain
+Port Blair, India
+Hartford, United States
+San Carlos de Bariloche, Argentina
+New Orleans, United States
+Santo Domingo, Dominican Republic
+Bhisho, South Africa
+Kōbe, Japan
+Nara, Japan
+Puerto Montt, Chile
+Petropavlovsk-Kamchatsky, Russia
+Sevilla, Spain
+Kuching, Malaysia
+Tapachula, Mexico
+Sault Ste. Marie, Canada
+Moroni, Comoros
+Port Harcourt, Nigeria
+Newcastle, Australia
+Inverness, United Kingdom
+Kelowna, Canada
+Okayama, Japan
+Novosibirsk, Russia
+Gaza, Palestine
+Stuttgart, Germany
+Copiapó, Chile
+Miri, Malaysia
+Cheyenne, United States
+North Bay, Canada
+Boulder, United States
+Houston, United States
+Ufa, Russia
+Rockhampton, Australia
+Culiacán, Mexico
+Kandahar, Afghanistan
+Wilmington, United States
+Mumbai, India
+Gdynia, Poland
+Maebashi, Japan
+Adelaide, Australia
+Chongjin, North Korea
+Nukuʻalofa, Tonga
+Brikama, Gambia
+San José, Costa Rica
+Hanoi, Vietnam
+Patna, India
+Phoenix, United States
+Tainan,Taiwan
+Gloucester, United Kingdom
+Mosul, Iraq
+Trujillo, Peru
+Ōita, Japan
+Phuket, Thailand
+Seattle, United States
+Fukui, Japan
+Kemijärvi, Finland
+Vantaa, Finland
+Uberlândia, Brazil
+Khon Kaen, Thailand
+Polokwane, South Africa
+Campina Grande, Brazil
+Dover, United States
+Durban, South Africa
+Deadhorse, United States
+Serekunda, Gambia
+Raleigh, United States
+Augusta, United States
+Pudasjärvi, Finland
+Mandurah, Australia
+Addis Ababa, Ethiopia
+Querétaro, Mexico
+Asunción, Paraguay
+Jacksonville, United States
+Petrolina, Brazil
+Enugu, Nigeria
+Naypyidaw, Burma
+Zagreb, Croatia
+Sukhumi, Georgia
+Budapest, Hungary
+Kiruna, Sweden
+San Luis Potosí, Mexico
+Gangtok, India
+Canberra, Australia
+Edmonton, Canada
+Vaduz, Liechtenstein
+Teresina, Brazil
+Pittsburgh, United States
+Bangkok, Thailand
+La Serena, Chile
+Pretoria, South Africa
+Puerto Aisén, Chile
+Espoo, Finland
+Miami, United States
+Gaziantep, Turkey
+Bratislava, Slovakia
+Windsor, Canada
+Yokohama, Japan
+Port Vila, Vanuatu
+Buffalo, United States
+Luanda, Angola
+Chuí, Brazil
+Abidjan, Ivory Coast
+Nicosia, Cyprus
+Eskisehir, Turkey
+Poznań, Poland
