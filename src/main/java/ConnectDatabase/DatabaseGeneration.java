@@ -17,9 +17,9 @@ public class DatabaseGeneration {
 	private static int noEntity = 0;
 	private static int noRelationship = 0;
 	
-	private static int noLink = 1000;
+	private static int noLink = 10000;
 	private static int noDate = 1000;
-	private static String startDate = "2011-01-01";
+	private static String startDate = "1998-01-31";
 	
 	private static String personLabelFileName = "personLabel.txt";
 	private static String personDescriptionFileName = "personDescription.txt";
@@ -48,7 +48,6 @@ public class DatabaseGeneration {
 	
 	public DatabaseGeneration() {
 		dataAcessObject = new DatabaseAccess();
-		System.out.println("đã chạy");
 		randomEntityGeneration = new RandomEntityGeneration();
 		relationshipGeneration = new RelationshipGeneration();
 		
@@ -101,7 +100,7 @@ public class DatabaseGeneration {
 		return dataAcessObject;
 	}
 	
-	public void clearStatements() {
-		dataAcessObject.clear();
-	}
+//	public void clearStatements() {
+//		dataAcessObject.clear();
+//	}
 }

@@ -32,17 +32,17 @@ import entity.Time;
 import virtuoso.rdf4j.driver.VirtuosoRepository;
 
 public class DatabaseAccess {
-	private static String ontologyNamespace = "http://www.randomlink.org/ontology/";
+	private static String ontologyNamespace = "http://www.example.org/ontology/";
 	
 
 	//Bộ namespace chuẩn bị khởi tạo
-	private static String personNamespace = "http://www.randomlink.org/person/";
-	private static String organizationNamespace = "http://www.randomlink.org/organization/";
-	private static String locationNamespace = "http://www.randomlink.org/location/";
-	private static String countryNamespace = "http://www.randomlink.org/country/";
-	private static String timeNamespace = "http://www.randomlink.org/time/";
-	private static String eventNamespace = "http://www.randomlink.org/event/";
-	private static String relationshipNamespace = "http://randomlink.org/relationship/";
+	private static String personNamespace = "http://www.example.org/person/";
+	private static String organizationNamespace = "http://www.example.org/organization/";
+	private static String locationNamespace = "http://www.example.org/location/";
+	private static String countryNamespace = "http://www.example.org/country/";
+	private static String timeNamespace = "http://www.example.org/time/";
+	private static String eventNamespace = "http://www.example.org/event/";
+	private static String relationshipNamespace = "http://example.org/relationship/";
 	
 	private RepositoryConnection connection = null;
 	private ValueFactory valueFactory = null;
@@ -63,10 +63,10 @@ public class DatabaseAccess {
 	public DatabaseAccess() {
 		Repository myRepository1 = new VirtuosoRepository("jdbc:virtuoso://localhost:1111","dba","dba");
 		connection = myRepository1.getConnection();
-//		connection.setNamespace(prefix, name);
+
 		
 		valueFactory =  connection.getValueFactory();
-		labelOntology = valueFactory.createIRI(personNamespace, "label");
+		labelOntology = valueFactory.createIRI(ontologyNamespace, "label");
 		descriptionOntology = valueFactory.createIRI(ontologyNamespace, "description");
 		extractedLinkOntology = valueFactory.createIRI(ontologyNamespace, "extracted-link");
 		extractedDateOntology = valueFactory.createIRI(ontologyNamespace, "extracted-date");
@@ -226,16 +226,16 @@ public class DatabaseAccess {
 		connection.add(entity1, relationship, entity2);
 	}
 	
-	public long querySPARQLTime(String queryString) {
-		TupleQuery tupleQuery = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-		long startTime = System.currentTimeMillis();
-		
-		TupleQueryResult result = tupleQuery.evaluate();
-		
-		long endTime = System.currentTimeMillis();
-		result.close();
-		return endTime - startTime;
-	}
+//	public long querySPARQLTime(String queryString) {
+//		TupleQuery tupleQuery = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
+//		long startTime = System.currentTimeMillis();
+//		
+//		TupleQueryResult result = tupleQuery.evaluate();
+//		
+//		long endTime = System.currentTimeMillis();
+//		result.close();
+//		return endTime - startTime;
+//	}
 	
 //	public long queryStatementTime(IRI subject, IRI predicate, IRI object, Resource context) {
 //		long startTime = System.currentTimeMillis();
@@ -244,73 +244,4 @@ public class DatabaseAccess {
 //		statements.close();
 //		return endTime - startTime;
 //	}
-
-	public void queryStatementTime(IRI subject, IRI predicate, IRI object, Resource context) {
-		RepositoryResult<Statement> statements = connection.getStatements(subject, predicate, object, context);
-		Model model = QueryResults.asModel(statements);
-		model.setNamespace("rdf",RDF.NAMESPACE);
-		model.setNamespace("rdfs",RDFS.NAMESPACE);
-		model.setNamespace("foaf",FOAF.NAMESPACE);
-		model.setNamespace("ex", personNamespace + "1");
-		Rio.write(model, System.out, RDFFormat.TURTLE);
-	}
-	public void printRows_3(String query) {
-		TupleQuery tupleQuery = connection.prepareTupleQuery(QueryLanguage.SPARQL, query);
-		TupleQueryResult result = tupleQuery.evaluate();
-		while (result.hasNext()) {
-			BindingSet bind = result.next();
-			Value s = bind.getValue("s");
-			Value p = bind.getValue("p");
-			Value o = bind.getValue("o");
-			System.out.format("s: %s p: %s o: %s\n",s,p,o);
-		}
-	}
-	
-	public IRI getLabelOntology() {
-		return labelOntology;
-	}
-
-	public IRI getDescriptionOntology() {
-		return descriptionOntology;
-	}
-
-	public IRI getExtractedLinkOntology() {
-		return extractedLinkOntology;
-	}
-
-	public IRI getExtractedDateOntology() {
-		return extractedDateOntology;
-	}
-
-	public IRI getAgeOntology() {
-		return ageOntology;
-	}
-
-	public IRI getHeadquarterOntology() {
-		return headquarterOntology;
-	}
-
-	public IRI getPersonType() {
-		return personType;
-	}
-
-	public IRI getOrganizationType() {
-		return organizationType;
-	}
-
-	public IRI getLocationType() {
-		return locationType;
-	}
-
-	public IRI getCountryType() {
-		return countryType;
-	}
-
-	public IRI getTimeType() {
-		return timeType;
-	}
-
-	public IRI getEventType() {
-		return eventType;
-	}
 }	

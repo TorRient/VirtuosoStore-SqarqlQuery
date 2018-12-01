@@ -1,40 +1,40 @@
 package ConnectDatabase;
 
 import org.eclipse.rdf4j.model.Value;
-import org.eclipse.rdf4j.model.vocabulary.FOAF;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.query.QueryLanguage;
 import org.eclipse.rdf4j.query.TupleQuery;
 import org.eclipse.rdf4j.query.TupleQueryResult;
-import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
-
-import virtuoso.rdf4j.driver.VirtuosoRepository;
-
+ 
 public class Query {
-	Repository myRepository = new VirtuosoRepository("jdbc:virtuoso://localhost:1111","dba","dba");
 	
-	RepositoryConnection connection = myRepository.getConnection();
-	public void Query1() {
-		String queryString = "PREFIX ex: <http://www.randomlink.org/person/> \n";
-		queryString += "PREFIX foaf: <" + FOAF.NAMESPACE + "> \n";
-		queryString += "SELECT ?s ?p ?o \n";
+	public void Query1(RepositoryConnection connection) {
+		String queryString = "SELECT ?s ?p ?o \n";
 	    queryString += "WHERE { \n";
 		queryString += "  ?s ?p ?o .\n";
-		queryString += " FILTER ( ?p = rdf:type)";
+		queryString += " FILTER ( ?p = <http://www.example.org/ontology/age> )";
 		queryString += "}";
-		this.QUERY(queryString);
+		this.QUERY(queryString, connection);
 	}
-	public void Query2() {
-	    String queryString = "PREFIX ex: <http://www.randomlink.org/person/> \n";
-	    queryString += "PREFIX foaf: <" + FOAF.NAMESPACE + "> \n";
-	    queryString += "SELECT ?s ?p ?o \n";
+	public void Query2(RepositoryConnection connection) {
+		String queryString = "PREFIX age:<http://www.example.org/ontology/> \n";
+		queryString += "SELECT ?s ?p ?o \n";
 	    queryString += "WHERE { \n";
-	    queryString += " ?s <http://www.randomlink.org/ontology/age> \"20\" \n";
-	    queryString += "}";
-	    this.QUERY(queryString);
+		queryString += "  ?s age:age  ?o .\n";
+		queryString += " FILTER ( ?o = 20)";
+		queryString += "}";
+		this.QUERY(queryString, connection);
 	}
-	public void QUERY(String query) {
+	public void Query3(RepositoryConnection connection) {
+		String queryString = "PREFIX age:<http://www.example.org/ontology/> \n";
+		queryString += "SELECT ?s ?p ?o \n";
+	    queryString += "WHERE { \n";
+		queryString += "  ?s age:extracted-link ?o .\n";
+		queryString += "}";
+		this.QUERY(queryString, connection);
+	}
+	public void QUERY(String query, RepositoryConnection connection) {
 		TupleQuery tupleQuery = connection.prepareTupleQuery(QueryLanguage.SPARQL, query);
 		TupleQueryResult result = tupleQuery.evaluate();
 		while (result.hasNext()) {

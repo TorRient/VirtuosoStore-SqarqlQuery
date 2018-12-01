@@ -14,7 +14,7 @@ public class EntityGeneration {
 	private static List<String> extractedDateList = new ArrayList<String>();
 	
 	public void setExtractedLinkList(int noLink) {
-		String prefix = "http://www.randomlink.org/link";
+		String prefix = "http://www.example.org/link";
 		
 		for(int i = 0; i < noLink; i++) {
 			extractedLinkList.add(prefix + i);
