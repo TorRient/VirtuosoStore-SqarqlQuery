@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import entity.Person;
 
-public class PersonGeneration extends EntityGeneration{
+public class PersonGen extends EntityGen{
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	

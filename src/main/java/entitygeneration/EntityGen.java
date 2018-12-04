@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-public class EntityGeneration {
+public class EntityGen {
 	private static final Random RANDOM = new Random();
 	private static List<String> extractedLinkList = new ArrayList<String>();
 	private static List<String> extractedDateList = new ArrayList<String>();

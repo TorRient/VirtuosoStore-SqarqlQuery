@@ -1,26 +1,12 @@
-						package ConnectDatabase;
+package ConnectDatabase;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
-import org.eclipse.rdf4j.model.Model;
-import org.eclipse.rdf4j.model.Resource;
-import org.eclipse.rdf4j.model.Statement;
-import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
-import org.eclipse.rdf4j.model.vocabulary.FOAF;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
-import org.eclipse.rdf4j.model.vocabulary.RDFS;
 import org.eclipse.rdf4j.model.vocabulary.XMLSchema;
-import org.eclipse.rdf4j.query.BindingSet;
-import org.eclipse.rdf4j.query.QueryLanguage;
-import org.eclipse.rdf4j.query.QueryResults;
-import org.eclipse.rdf4j.query.TupleQuery;
-import org.eclipse.rdf4j.query.TupleQueryResult;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryResult;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.Rio;
 
 import entity.Country;
 import entity.Entity;
@@ -31,7 +17,7 @@ import entity.Person;
 import entity.Time;
 import virtuoso.rdf4j.driver.VirtuosoRepository;
 
-public class DatabaseAccess {
+public class InsertData {
 	private static String ontologyNamespace = "http://www.example.org/ontology/";
 	
 
@@ -42,7 +28,7 @@ public class DatabaseAccess {
 	private static String countryNamespace = "http://www.example.org/country/";
 	private static String timeNamespace = "http://www.example.org/time/";
 	private static String eventNamespace = "http://www.example.org/event/";
-	private static String relationshipNamespace = "http://example.org/relationship/";
+	private static String relationshipNamespace = "http://www.example.org/relationship/";
 	
 	private RepositoryConnection connection = null;
 	private ValueFactory valueFactory = null;
@@ -52,7 +38,6 @@ public class DatabaseAccess {
 	private IRI extractedLinkOntology;
 	private IRI extractedDateOntology;
 	private IRI ageOntology;
-	private IRI headquarterOntology;
 	
 	private IRI personType;
 	private IRI organizationType;
@@ -60,18 +45,16 @@ public class DatabaseAccess {
 	private IRI countryType;
 	private IRI timeType;
 	private IRI eventType;
-	public DatabaseAccess() {
+	public InsertData() {
 		Repository myRepository1 = new VirtuosoRepository("jdbc:virtuoso://localhost:1111","dba","dba");
 		connection = myRepository1.getConnection();
 
-		
 		valueFactory =  connection.getValueFactory();
 		labelOntology = valueFactory.createIRI(ontologyNamespace, "label");
 		descriptionOntology = valueFactory.createIRI(ontologyNamespace, "description");
 		extractedLinkOntology = valueFactory.createIRI(ontologyNamespace, "extracted-link");
 		extractedDateOntology = valueFactory.createIRI(ontologyNamespace, "extracted-date");
 		ageOntology = valueFactory.createIRI(ontologyNamespace, "age");
-		headquarterOntology = valueFactory.createIRI(ontologyNamespace, "headquarter");
 		
 		personType = valueFactory.createIRI(ontologyNamespace, "Person");
 		organizationType = valueFactory.createIRI(ontologyNamespace, "Organization");
@@ -97,8 +80,22 @@ public class DatabaseAccess {
 			connection.clear();
 		}
 	}
+	private IRI insertEntity(Entity entity, String nameSpace, IRI type) {
+		IRI iri = valueFactory.createIRI(nameSpace, entity.getId());
+		Literal label = valueFactory.createLiteral(entity.getLabel());
+		Literal description = valueFactory.createLiteral(entity.getDescription());
+		Literal extractedLink = valueFactory.createLiteral(entity.getExtractedLink());
+		Literal extractedDate = valueFactory.createLiteral(entity.getExtractedDate(), XMLSchema.DATE);
+		
+		connection.add(iri, RDF.TYPE, type );
+		connection.add(iri, labelOntology, label);
+		connection.add(iri, descriptionOntology, description);
+		connection.add(iri, extractedLinkOntology, extractedLink);
+		connection.add(iri, extractedDateOntology, extractedDate);
+		return iri;
+	}	
 	
-	private IRI insertPerson(Person person) {
+	private IRI insertEntity(Person person) {
 		IRI iri = valueFactory.createIRI(personNamespace, person.getId());
 		Literal label = valueFactory.createLiteral(person.getLabel());
 		Literal description = valueFactory.createLiteral(person.getDescription());
@@ -115,20 +112,18 @@ public class DatabaseAccess {
 		return iri;
 	}
 	
-	private IRI insertOrganization(Organization organization) {
+	private IRI insertEntity(Organization organization) {
 		IRI iri = valueFactory.createIRI(organizationNamespace, organization.getId());
 		Literal label = valueFactory.createLiteral(organization.getLabel());
 		Literal description = valueFactory.createLiteral(organization.getDescription());
 		Literal extractedLink = valueFactory.createLiteral(organization.getExtractedLink());
 		Literal extractedDate = valueFactory.createLiteral(organization.getExtractedDate(), XMLSchema.DATE);
-		Literal headquarter = valueFactory.createLiteral(organization.getHeadquarter());
 		
 		connection.add(iri, RDF.TYPE, organizationType);
 		connection.add(iri, labelOntology, label);
 		connection.add(iri, descriptionOntology, description);
 		connection.add(iri, extractedLinkOntology, extractedLink);
 		connection.add(iri, extractedDateOntology, extractedDate);
-		connection.add(iri, headquarterOntology, headquarter);
 		
 		return iri;
 	}
@@ -198,22 +193,22 @@ public class DatabaseAccess {
 	
 	public IRI insertEntity(Entity entity) {
 		if(entity instanceof Person) {
-			return insertPerson((Person) entity); 
+			return insertEntity((Person) entity); 
 		}
 		else if(entity instanceof Organization) {
-			return insertOrganization((Organization) entity);
+			return insertEntity((Organization) entity,organizationNamespace,organizationType);
 		}
 		else if(entity instanceof Location) {
-			return insertLocation((Location) entity);
+			return insertEntity((Location) entity,locationNamespace,locationType);
 		}
 		else if(entity instanceof Country) {
-			return insertCountry((Country) entity);
+			return insertEntity((Country) entity,countryNamespace,countryType);
 		}
 		else if(entity instanceof Time) {
-			return insertTime((Time) entity);
+			return insertEntity((Time) entity,timeNamespace,timeType);
 		}
 		else if(entity instanceof Event) {
-			return insertEvent((Event) entity);
+			return insertEntity((Event) entity,eventNamespace,eventType);
 		}
 		return null;
 	}

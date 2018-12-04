@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import entity.Organization;
+import entity.Country;
 
-public class OrganizationGeneration extends EntityGeneration{
+public class CountryGen extends EntityGen{
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
-	private static List<String> headquarterList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
 		Scanner scanner = null;
@@ -41,20 +40,6 @@ public class OrganizationGeneration extends EntityGeneration{
 		}
 	}
 	
-	public void setHeadquarterList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			headquarterList.add(scanner.nextLine());
-		}
-	}
-	
 	public String generateRandomLabel() {
 		return labelList.get(this.getRandom().nextInt(labelList.size()));
 	}
@@ -63,11 +48,7 @@ public class OrganizationGeneration extends EntityGeneration{
 		return descriptionList.get(this.getRandom().nextInt(descriptionList.size()));
 	}
 	
-	public String generateRandomHeadquarter() {
-		return headquarterList.get(this.getRandom().nextInt(headquarterList.size()));
-	}
-	
-	public Organization generateOrganization() {
-		return new Organization(generateRandomLabel(), generateRandomDescription(), generateRandomExtractedLink(), generateRandomExtractedDate(), generateRandomHeadquarter());
+	public Country generateCountry() {
+		return new Country(this.generateRandomLabel(), this.generateRandomDescription(), this.generateRandomExtractedLink(), this.generateRandomExtractedDate());
 	}
 }

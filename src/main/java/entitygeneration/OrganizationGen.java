@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import entity.Location;
+import entity.Organization;
 
-public class LocationGeneration extends EntityGeneration{
+public class OrganizationGen extends EntityGen{
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	
@@ -48,7 +48,8 @@ public class LocationGeneration extends EntityGeneration{
 		return descriptionList.get(this.getRandom().nextInt(descriptionList.size()));
 	}
 	
-	public Location generateLocation() {
-		return new Location(this.generateRandomLabel(), this.generateRandomDescription(), this.generateRandomExtractedLink(), this.generateRandomExtractedDate());
+	
+	public Organization generateOrganization() {
+		return new Organization(generateRandomLabel(), generateRandomDescription(), generateRandomExtractedLink(), generateRandomExtractedDate());
 	}
 }

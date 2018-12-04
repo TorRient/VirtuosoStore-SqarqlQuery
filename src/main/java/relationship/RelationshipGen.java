@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class RelationshipGeneration {
+public class RelationshipGen {
 	private static final Random RANDOM = new Random();
 	private static List<String> relationshipDescriptionList = new ArrayList<String>();
 	
@@ -24,11 +24,11 @@ public class RelationshipGeneration {
 		}
 	}
 	
-	public String generateRandomRelationshipDescription() {
+	public String genRandomRelationshipDescription() {
 		return relationshipDescriptionList.get(RANDOM.nextInt(relationshipDescriptionList.size()));
 	}
 	
-	public Relationship generateRelationship() {
-		return new Relationship(generateRandomRelationshipDescription());
+	public Relationship genRelationship() {
+		return new Relationship(genRandomRelationshipDescription());
 	}
 }

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import entity.Time;
 
-public class TimeGeneration extends EntityGeneration {
+public class TimeGen extends EntityGen {
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	
