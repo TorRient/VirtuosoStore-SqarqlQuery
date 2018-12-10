@@ -9,8 +9,8 @@ import java.util.Scanner;
 import entity.Person;
 
 public class PersonGen extends EntityGen{
-	private static List<String> labelList = new ArrayList<String>();
-	private static List<String> descriptionList = new ArrayList<String>();
+	private List<String> labelList = new ArrayList<String>();
+	private List<String> descriptionList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
 		Scanner scanner = null;
@@ -49,7 +49,7 @@ public class PersonGen extends EntityGen{
 	}
 	
 	public int generateRandomAge() {
-		return this.getRandom().nextInt(100);
+		return this.getRandom().nextInt(100) + 5;
 	}
 	
 	public Person generatePerson() {

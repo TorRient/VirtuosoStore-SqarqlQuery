@@ -9,7 +9,7 @@ public class Event extends Entity{
 		noEvent++;
 	}
 	
-	public static int getNoEvent() {
+	public int getNoEvent() {
 		return noEvent;
 	}
 }

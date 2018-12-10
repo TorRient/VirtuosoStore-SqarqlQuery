@@ -9,7 +9,7 @@ public class Time extends Entity{
 		noTime++;
 	}
 	
-	public static int getNoTime() {
+	public int getNoTime() {
 		return noTime;
 	}
 }

@@ -2,7 +2,9 @@ package ConnectDatabase;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
+import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.ValueFactory;
+import org.eclipse.rdf4j.model.impl.TreeModel;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.XMLSchema;
 import org.eclipse.rdf4j.repository.Repository;
@@ -18,21 +20,21 @@ import entity.Time;
 import virtuoso.rdf4j.driver.VirtuosoRepository;
 
 public class InsertData {
-	private static String ontologyNamespace = "http://www.example.org/ontology/";
+	private String ontologyNamespace = "http://www.example.org/ontology/";
 	
 
 	//Bộ namespace chuẩn bị khởi tạo
-	private static String personNamespace = "http://www.example.org/person/";
-	private static String organizationNamespace = "http://www.example.org/organization/";
-	private static String locationNamespace = "http://www.example.org/location/";
-	private static String countryNamespace = "http://www.example.org/country/";
-	private static String timeNamespace = "http://www.example.org/time/";
-	private static String eventNamespace = "http://www.example.org/event/";
-	private static String relationshipNamespace = "http://www.example.org/relationship/";
+	private String personNamespace = "http://www.example.org/person/";
+	private String organizationNamespace = "http://www.example.org/organization/";
+	private String locationNamespace = "http://www.example.org/location/";
+	private String countryNamespace = "http://www.example.org/country/";
+	private String timeNamespace = "http://www.example.org/time/";
+	private String eventNamespace = "http://www.example.org/event/";
+	private String relationshipNamespace = "http://www.example.org/relationship/";
 	
 	private RepositoryConnection connection = null;
 	private ValueFactory valueFactory = null;
-		
+
 	private IRI labelOntology;
 	private IRI descriptionOntology;
 	private IRI extractedLinkOntology;
@@ -45,6 +47,8 @@ public class InsertData {
 	private IRI countryType;
 	private IRI timeType;
 	private IRI eventType;
+	
+	private Model model;
 	public InsertData() {
 		Repository myRepository1 = new VirtuosoRepository("jdbc:virtuoso://localhost:1111","dba","dba");
 		connection = myRepository1.getConnection();
@@ -63,18 +67,20 @@ public class InsertData {
 		timeType = valueFactory.createIRI(ontologyNamespace, "Time");
 		eventType = valueFactory.createIRI(ontologyNamespace, "Event");
 		
+		model = new TreeModel();
 	}
 	
 	public RepositoryConnection getConnection() {
 		return connection;
 	}
-	
+	public Model getModel() {
+		return model;
+	}
 	public void closeConnection() {
 		if(connection != null) {
 			connection.close();
 		}
 	}
-	
 	public void clear() {
 		if(connection != null) {
 			connection.clear();
@@ -87,11 +93,11 @@ public class InsertData {
 		Literal extractedLink = valueFactory.createLiteral(entity.getExtractedLink());
 		Literal extractedDate = valueFactory.createLiteral(entity.getExtractedDate(), XMLSchema.DATE);
 		
-		connection.add(iri, RDF.TYPE, type );
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
+		model.add(iri, RDF.TYPE, type );
+		model.add(iri, labelOntology, label);
+		model.add(iri, descriptionOntology, description);
+		model.add(iri, extractedLinkOntology, extractedLink);
+		model.add(iri, extractedDateOntology, extractedDate);
 		return iri;
 	}	
 	
@@ -103,93 +109,93 @@ public class InsertData {
 		Literal extractedDate = valueFactory.createLiteral(person.getExtractedDate(), XMLSchema.DATE);
 		Literal age = valueFactory.createLiteral(person.getAge());
 		
-		connection.add(iri, RDF.TYPE, personType );
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		connection.add(iri, ageOntology, age);
+		model.add(iri, RDF.TYPE, personType );
+		model.add(iri, labelOntology, label);
+		model.add(iri, descriptionOntology, description);
+		model.add(iri, extractedLinkOntology, extractedLink);
+		model.add(iri, extractedDateOntology, extractedDate);
+		model.add(iri, ageOntology, age);
 		return iri;
 	}
 	
-	private IRI insertEntity(Organization organization) {
-		IRI iri = valueFactory.createIRI(organizationNamespace, organization.getId());
-		Literal label = valueFactory.createLiteral(organization.getLabel());
-		Literal description = valueFactory.createLiteral(organization.getDescription());
-		Literal extractedLink = valueFactory.createLiteral(organization.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(organization.getExtractedDate(), XMLSchema.DATE);
-		
-		connection.add(iri, RDF.TYPE, organizationType);
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		
-		return iri;
-	}
-	
-	private IRI insertLocation(Location location) {
-		IRI iri = valueFactory.createIRI(locationNamespace, location.getId());
-		Literal label = valueFactory.createLiteral(location.getLabel());
-		Literal description = valueFactory.createLiteral(location.getDescription());
-		Literal extractedLink = valueFactory.createLiteral(location.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(location.getExtractedDate(), XMLSchema.DATE);
-		
-		connection.add(iri, RDF.TYPE, locationType);
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		
-		return iri;
-	}
-	
-	private IRI insertCountry(Country country) {
-		IRI iri = valueFactory.createIRI(countryNamespace, country.getId());
-		Literal label = valueFactory.createLiteral(country.getLabel());
-		Literal description = valueFactory.createLiteral(country.getDescription());
-		Literal extractedLink = valueFactory.createLiteral(country.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(country.getExtractedDate(), XMLSchema.DATE);
-		
-		connection.add(iri, RDF.TYPE, countryType);
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		
-		return iri;
-	}
-	
-	private IRI insertTime(Time time) {
-		IRI iri = valueFactory.createIRI(timeNamespace, time.getId());
-		Literal label = valueFactory.createLiteral(time.getLabel());
-		Literal description = valueFactory.createLiteral(time.getDescription());
-		Literal extractedLink = valueFactory.createLiteral(time.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(time.getExtractedDate(), XMLSchema.DATE);
-		
-		connection.add(iri, RDF.TYPE, timeType);
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		return iri;
-	}
-	
-	private IRI insertEvent(Event event) {
-		IRI iri = valueFactory.createIRI(eventNamespace, event.getId());
-		Literal label = valueFactory.createLiteral(event.getLabel());
-		Literal description = valueFactory.createLiteral(event.getDescription());
-		Literal extractedLink = valueFactory.createLiteral(event.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(event.getExtractedDate(), XMLSchema.DATE);
-		
-		connection.add(iri, RDF.TYPE, eventType);
-		connection.add(iri, labelOntology, label);
-		connection.add(iri, descriptionOntology, description);
-		connection.add(iri, extractedLinkOntology, extractedLink);
-		connection.add(iri, extractedDateOntology, extractedDate);
-		
-		return iri;
-	}
+//	private IRI insertEntity(Organization organization) {
+//		IRI iri = valueFactory.createIRI(organizationNamespace, organization.getId());
+//		Literal label = valueFactory.createLiteral(organization.getLabel());
+//		Literal description = valueFactory.createLiteral(organization.getDescription());
+//		Literal extractedLink = valueFactory.createLiteral(organization.getExtractedLink());
+//		Literal extractedDate = valueFactory.createLiteral(organization.getExtractedDate(), XMLSchema.DATE);
+//		
+//		model.add(iri, RDF.TYPE, organizationType);
+//		model.add(iri, labelOntology, label);
+//		model.add(iri, descriptionOntology, description);
+//		model.add(iri, extractedLinkOntology, extractedLink);
+//		model.add(iri, extractedDateOntology, extractedDate);
+//		
+//		return iri;
+//	}
+//	
+//	private IRI insertLocation(Location location) {
+//		IRI iri = valueFactory.createIRI(locationNamespace, location.getId());
+//		Literal label = valueFactory.createLiteral(location.getLabel());
+//		Literal description = valueFactory.createLiteral(location.getDescription());
+//		Literal extractedLink = valueFactory.createLiteral(location.getExtractedLink());
+//		Literal extractedDate = valueFactory.createLiteral(location.getExtractedDate(), XMLSchema.DATE);
+//		
+//		model.add(iri, RDF.TYPE, locationType);
+//		model.add(iri, labelOntology, label);
+//		model.add(iri, descriptionOntology, description);
+//		model.add(iri, extractedLinkOntology, extractedLink);
+//		model.add(iri, extractedDateOntology, extractedDate);
+//		
+//		return iri;
+//	}
+//	
+//	private IRI insertCountry(Country country) {
+//		IRI iri = valueFactory.createIRI(countryNamespace, country.getId());
+//		Literal label = valueFactory.createLiteral(country.getLabel());
+//		Literal description = valueFactory.createLiteral(country.getDescription());
+//		Literal extractedLink = valueFactory.createLiteral(country.getExtractedLink());
+//		Literal extractedDate = valueFactory.createLiteral(country.getExtractedDate(), XMLSchema.DATE);
+//		
+//		connection.add(iri, RDF.TYPE, countryType);
+//		connection.add(iri, labelOntology, label);
+//		connection.add(iri, descriptionOntology, description);
+//		connection.add(iri, extractedLinkOntology, extractedLink);
+//		connection.add(iri, extractedDateOntology, extractedDate);
+//		
+//		return iri;
+//	}
+//	
+//	private IRI insertTime(Time time) {
+//		IRI iri = valueFactory.createIRI(timeNamespace, time.getId());
+//		Literal label = valueFactory.createLiteral(time.getLabel());
+//		Literal description = valueFactory.createLiteral(time.getDescription());
+//		Literal extractedLink = valueFactory.createLiteral(time.getExtractedLink());
+//		Literal extractedDate = valueFactory.createLiteral(time.getExtractedDate(), XMLSchema.DATE);
+//		
+//		connection.add(iri, RDF.TYPE, timeType);
+//		connection.add(iri, labelOntology, label);
+//		connection.add(iri, descriptionOntology, description);
+//		connection.add(iri, extractedLinkOntology, extractedLink);
+//		connection.add(iri, extractedDateOntology, extractedDate);
+//		return iri;
+//	}
+//	
+//	private IRI insertEvent(Event event) {
+//		IRI iri = valueFactory.createIRI(eventNamespace, event.getId());
+//		Literal label = valueFactory.createLiteral(event.getLabel());
+//		Literal description = valueFactory.createLiteral(event.getDescription());
+//		Literal extractedLink = valueFactory.createLiteral(event.getExtractedLink());
+//		Literal extractedDate = valueFactory.createLiteral(event.getExtractedDate(), XMLSchema.DATE);
+//		
+//		connection.add(iri, RDF.TYPE, eventType);
+//		connection.add(iri, labelOntology, label);
+//		connection.add(iri, descriptionOntology, description);
+//		connection.add(iri, extractedLinkOntology, extractedLink);
+//		connection.add(iri, extractedDateOntology, extractedDate);
+//		
+//		return iri;
+//	}
 	
 	public IRI insertEntity(Entity entity) {
 		if(entity instanceof Person) {
@@ -218,7 +224,7 @@ public class InsertData {
 	}
 	
 	public void insertStatement(IRI entity1, IRI relationship, IRI entity2) {
-		connection.add(entity1, relationship, entity2);
+		model.add(entity1, relationship, entity2);
 	}
 	
 //	public long querySPARQLTime(String queryString) {
@@ -240,3 +246,4 @@ public class InsertData {
 //		return endTime - startTime;
 //	}
 }	
+

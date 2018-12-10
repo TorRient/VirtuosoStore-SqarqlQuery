@@ -9,8 +9,8 @@ import java.util.Scanner;
 import entity.Time;
 
 public class TimeGen extends EntityGen {
-	private static List<String> labelList = new ArrayList<String>();
-	private static List<String> descriptionList = new ArrayList<String>();
+	private List<String> labelList = new ArrayList<String>();
+	private List<String> descriptionList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
 		Scanner scanner = null;

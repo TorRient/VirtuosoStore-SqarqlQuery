@@ -9,26 +9,27 @@ import java.util.Scanner;
 
 public class RelationshipGen {
 	private static final Random RANDOM = new Random();
-	private static List<String> relationshipDescriptionList = new ArrayList<String>();
-	
-	public void setRelationshipDescriptionList(String fileName) {
+	public List<String> setRelationshipDescriptionList(String fileName) {
+		List<String> relationshipDescriptionList = new ArrayList<String>();
 		Scanner scanner = null;
+		relationshipDescriptionList.clear();
 		try {
 			scanner = new Scanner(new File(fileName));
 			while(scanner.hasNextLine()) {
-				relationshipDescriptionList.add(scanner.nextLine());
+				relationshipDescriptionList.add(scanner.nextLine().replace(" ", "_"));
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return relationshipDescriptionList;
 	}
 	
-	public String genRandomRelationshipDescription() {
-		return relationshipDescriptionList.get(RANDOM.nextInt(relationshipDescriptionList.size()));
+	public String genRandomRelationshipDescription(List<String> relationship) {
+		return relationship.get(RANDOM.nextInt(relationship.size()));
 	}
 	
-	public Relationship genRelationship() {
-		return new Relationship(genRandomRelationshipDescription());
+	public Relationship genRelationship(List<String> relationship) {
+		return new Relationship(genRandomRelationshipDescription(relationship));
 	}
 }

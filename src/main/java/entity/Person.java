@@ -19,7 +19,7 @@ public class Person extends Entity {
 		this.age = age;
 	}
 
-	public static int getNoPerson() {
+	public int getNoPerson() {
 		return noPerson;
 	}
 

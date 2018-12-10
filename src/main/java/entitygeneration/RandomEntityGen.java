@@ -5,14 +5,14 @@ import java.util.Random;
 import entity.Entity;
 
 public class RandomEntityGen {
-	private static final Random RANDOM = new Random();
-	private static final EntityGen Entity = new EntityGen();
-	private static final PersonGen Person = new PersonGen();
-	private static final OrganizationGen Organization = new OrganizationGen();
-	private static final LocationGen Location = new LocationGen();
-	private static final TimeGen Time = new TimeGen();
-	private static final EventGen Event = new EventGen();
-	private static final CountryGen Country = new CountryGen();
+	private final Random RANDOM = new Random();
+	private final EntityGen Entity = new EntityGen();
+	private final PersonGen Person = new PersonGen();
+	private final OrganizationGen Organization = new OrganizationGen();
+	private final LocationGen Location = new LocationGen();
+	private final TimeGen Time = new TimeGen();
+	private final EventGen Event = new EventGen();
+	private final CountryGen Country = new CountryGen();
 
 	public RandomEntityGen() {
 	}

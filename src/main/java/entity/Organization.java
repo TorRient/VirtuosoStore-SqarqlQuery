@@ -9,7 +9,7 @@ public class Organization extends Entity {
 		noOrganization++;
 	}
 
-	public static int getNoOrganization() {
+	public int getNoOrganization() {
 		return noOrganization;
 	}
 

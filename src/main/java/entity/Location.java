@@ -9,7 +9,7 @@ public class Location extends Entity {
 		noLocation++;
 	}
 
-	public static int getNoLocation() {
+	public int getNoLocation() {
 		return noLocation;
 	}
 
