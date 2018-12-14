@@ -6,8 +6,8 @@ import ConnectDatabase.Query;
 public class App {
 	public static void main(String[] args) {
 		Query query = new Query();
-		int[] n = {2000000};
-		int[] m = {4000000};
+		int[] n = {100,5000,60000,1000000,2000000}; // n thực thể
+		int[] m = {200,7000,80000,2000000,4000000}; // m quan hệ
 		DBGeneration dbGen = new DBGeneration();
 		for(int i = 0; i < 1; i++) {
 //			Tạo database
