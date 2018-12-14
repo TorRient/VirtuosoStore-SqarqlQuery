@@ -356,3 +356,122 @@ World Resources Institute
 World Trade Organization
 World Wildlife Fund- WWF
 Yumbo Cómo Vamos
+﻿Food and Agriculture Organization
+Switzerland International Labour Organization
+Canada International Civil Aviation Organization
+United Kingdom International Maritime Organization
+Switzerland International Telecommunication Union
+Switzerland Joint United Nations Programme on HIV/AIDS
+United Nations Capital Development Fund
+United Nations Human Rights Council (UNHRC)
+United States United Nations International Children's Emergency Fund (UNICEF)
+United States United Nations Development Programme
+France United Nations Educational, Scientific and Cultural Organization (UNESCO)
+Kenya United Nations Environment Programme
+Kenya United Nations Human Settlements Programme
+Austria United Nations Industrial Development Organization
+Switzerland United Nations Office for Disaster Risk Reduction (UNISDR)
+Austria United Nations Office on Drugs and Crime
+Switzerland Universal Postal Union
+Switzerland World Health Organization (WHO)
+Switzerland World Intellectual Property Organization
+Italy World Food Programme
+Switzerland World Meteorological Organization
+Spain World Tourism Organization
+International Organization for Migration (IOM)
+International Centre for Migration Policy Development
+Agreement on the Conservation of Albatrosses and Petrels (ACAP)
+Global Environment Facility (GEF)
+Intergovernmental Panel on Climate Change (IPCC)
+The International Union for Conservation of Nature (IUCN)
+Partnerships in Environmental Management for the Seas of East Asia (PEMSEA)
+United Nations Environment Programme (UNEP)
+Asia-Pacific Fishery Commission (APFIC)
+Commission for the Conservation of Antarctic Marine Living Resources (CCAMLR)
+Great Lakes Fishery Commission (GLFC)
+Indian Ocean Tuna Commission (IOTC)
+Inter-American Tropical Tuna Commission (IATTC)
+International Commission for the Conservation of Atlantic Tunas (ICCAT)
+International Pacific Halibut Commission (IPHC)
+International Whaling Commission (IWC)
+North-East Atlantic Fisheries Commission (NEAFC)
+Northwest Atlantic Fisheries Organization (NAFO)
+North Atlantic Salmon Conservation Organization (NASCO)
+Pacific Salmon Commission (PSC)
+Southeast Asian Fisheries Development Center (SEAFDEC)
+Western and Central Pacific Fisheries Commission (WCPFC)
+Alliance for Financial Inclusion (AFI)
+African Development Bank
+Asian Development Bank
+Asian Infrastructure Investment Bank
+Bank for International Settlements
+Black Sea Trade and Development Bank (BSTDB)
+Caribbean Development Bank (CDB)
+Council of Europe Development Bank (CEB)
+Eurasian Development Bank
+European Bank for Reconstruction and Development (EBRD)
+Federation of Euro-Asian Stock Exchanges
+Financial Action Task Force (FATF)
+Inter-American Development Bank
+International Bureau of Weights and Measures (BIPM)
+International Energy Agency (IEA)
+International Fund for Agricultural Development (IFAD)
+International Development Law Organization (IDLO), headquartered in Rome
+International Monetary Fund (IMF)
+Islamic Development Bank (IDB)
+Netherlands Development Finance Company (FMO)
+Nordic Development Fund (NDF)
+Nordic Investment Bank (NIB)
+New Development Bank (NDB)
+OPEC Fund for International Development (OPEC Fund)
+Organisation for Economic Co-operation and Development (OECD)
+Organization of Petroleum-Exporting Countries (OPEC)
+West African Development Bank (BOAD)
+World Bank Group
+International Bank for Reconstruction and Development (IBRD)
+International Development Association (IDA)
+International Finance Corporation (IFC)
+Multilateral Investment Guarantee Agency (MIGA)
+International Centre for Settlement of Investment Disputes (ICSID)
+World Customs Organization (WCO)
+World Trade Organization (WTO)
+European Union (EU)
+Western European Union (defunct)
+Council of Europe (CoE)
+Central European Initiative (CEI)
+Energy Community
+European Free Trade Association (EFTA)
+European Patent Organisation (EPO)
+European Science Foundation
+European Organisation for the Safety of Air Navigation (EUROCONTROL)
+Group of 9 (G9)
+International Commission on Civil Status (ICCS)
+Central Commission for Navigation on the Rhine (CCNR)
+Council of the Baltic Sea States (CBSS)
+Baltic Black Sea Union (BBSU)
+Assembly of European Regions (AER)
+Eiroforum
+CERN
+European Fusion Development Agreement (EFDA JET)
+European Molecular Biology Laboratory (EMBL)
+European Space Agency (ESA)
+European Organisation for the Exploitation of Meteorological Satellites (EUMETSAT)
+European Southern Observatory (ESO)
+European Synchrotron Radiation Facility (ESRF)
+European x-ray free electron laser (European XFEL)
+Institut Laue–Langevin (ILL)
+Baltic Marine Environment Protection Commission
+Benelux
+Belgium–Luxembourg Economic Union
+British–Irish Council
+Nordic Council
+Nordic Investment Bank
+Northern Dimension Partnership in Public Health and Social Well-being (NDPHS)
+Organisation for Joint Armament Cooperation(OCCAR)
+Agency for International Trade Information and Cooperation (AITIC)
+Visegrád Group (V4)
+EUREKA
+European Cooperation in Science and Technology (COST)
+Community for Democracy and Rights of Nations (Commonwealth of Unrecognized States)
+European Centre for Medium-range Weather Forecasts (ECMWF)
+West Nordic Council

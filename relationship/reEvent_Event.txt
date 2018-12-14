@@ -1,0 +1,7 @@
+in same country
+in same location
+is held by same organization
+is held by same person
+after
+before
+same time

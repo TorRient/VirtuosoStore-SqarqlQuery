@@ -1,58 +1,54 @@
 package entitygeneration;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class EntityGen {
 	private static final Random RANDOM = new Random();
 	private static List<String> extractedLinkList = new ArrayList<String>();
 	private static List<String> extractedDateList = new ArrayList<String>();
-	
-	public void setExtractedLinkList(int noLink) {
-		String prefix = "http://www.example.org/link";
-		
-		for(int i = 0; i < noLink; i++) {
-			extractedLinkList.add(prefix + i);
-		}
-	}
-	
-	public List<String> getExtractedLinkList() {
-		return extractedLinkList;
-	}
-	
-	public void setExtractedDateList(int noDate, String startDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = null;
+
+	public void setExtractedDateList(String fileName) {
+		Scanner scanner = null;
 		try {
-			date = dateFormat.parse(startDate);
-		} catch (ParseException e) {
+			scanner = new Scanner(new File(fileName));
+		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		
-		for(int i = 0; i < noDate; i++) {
-			extractedDateList.add(dateFormat.format(calendar.getTime()));
-			calendar.add(Calendar.DATE, 1);
+
+		while (scanner.hasNextLine()) {
+			extractedDateList.add(scanner.nextLine());
 		}
 	}
-	
-	public Random getRandom() {
-		return RANDOM;
+
+	public void setExtractedLinkList(String fileName) {
+		Scanner scanner = null;
+		try {
+			scanner = new Scanner(new File(fileName));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		while (scanner.hasNextLine()) {
+			extractedLinkList.add(scanner.nextLine());
+		}
 	}
-	
+
 	public String generateRandomExtractedLink() {
 		return extractedLinkList.get(RANDOM.nextInt(extractedLinkList.size()));
 	}
-	
+
 	public String generateRandomExtractedDate() {
 		return extractedDateList.get(RANDOM.nextInt(extractedDateList.size()));
+	}
+
+	public Random getRandom() {
+		return RANDOM;
 	}
 }

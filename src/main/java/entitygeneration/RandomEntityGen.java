@@ -5,31 +5,33 @@ import java.util.Random;
 import entity.Entity;
 
 public class RandomEntityGen {
-	private final Random RANDOM = new Random();
-	private final EntityGen Entity = new EntityGen();
-	private final PersonGen Person = new PersonGen();
-	private final OrganizationGen Organization = new OrganizationGen();
-	private final LocationGen Location = new LocationGen();
-	private final TimeGen Time = new TimeGen();
-	private final EventGen Event = new EventGen();
-	private final CountryGen Country = new CountryGen();
+	private static final Random RANDOM = new Random();
+	private static final EntityGen Entity = new EntityGen();
+	private static final PersonGen Person = new PersonGen();
+	private static final OrganizationGen Organization = new OrganizationGen();
+	private static final LocationGen Location = new LocationGen();
+	private static final TimeGen Time = new TimeGen();
+	private static final EventGen Event = new EventGen();
+	private static final CountryGen Country = new CountryGen();
 
 	public RandomEntityGen() {
 	}
 
-	public void setEntityGeneration(int noLink, int noDate, String startDate) {
-		Entity.setExtractedDateList(noDate, startDate);
-		Entity.setExtractedLinkList(noLink);
+	public void setEntityGeneration(String extractLinkFileName, String extractTimeFileName) {
+		Entity.setExtractedDateList(extractTimeFileName);
+		Entity.setExtractedLinkList(extractLinkFileName);
 	}
 
-	public void setPersonGeneration(String personLabelFileName, String personDescriptionFileName) {
+	public void setPersonGeneration(String personLabelFileName, String personDescriptionFileName, String personJobFileName) {
 		Person.setDescriptionList(personDescriptionFileName);
 		Person.setLabelList(personLabelFileName);
+		Person.setJobList(personJobFileName);
 	}
 
-	public void setOrganizationGeneration(String organizationLabelFileName, String organizationDescriptionFileName) {
+	public void setOrganizationGeneration(String organizationLabelFileName, String organizationDescriptionFileName, String headquarterFileName) {
 		Organization.setLabelList(organizationLabelFileName);
 		Organization.setDescriptionList(organizationDescriptionFileName);
+		Organization.setHeadquarterList(headquarterFileName);
 	}
 
 	public void setLocationGeneration(String locationLabelFileName, String locationDescriptionFileName) {

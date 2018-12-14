@@ -1,0 +1,3 @@
+near
+far
+in same country with

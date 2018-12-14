@@ -5,28 +5,35 @@ import ConnectDatabase.Query;
 
 public class App {
 	public static void main(String[] args) {
-//		System.out.println("hoangf");
-		int[] n = {1000000};
-		int[] m = {1000000};
-//		long startTime = System.currentTimeMillis();
-		DBGeneration dbGen = new DBGeneration();
-		dbGen.clearStatements();
-//		long endTime = System.currentTimeMillis();
-//		System.out.println("Time to init DatabaseGeneration: " + (endTime - startTime));
-		long startTime = System.currentTimeMillis();
-		for(int i = 0; i < 1; i++) {
-//			System.out.println(i);
-			dbGen.genDatabase(n[i], m[i]);
-//			long time = databaseGeneration.getDataAccessObject().queryStatementTime(null, RDF.TYPE, databaseGeneration.getDataAccessObject().getPersonType(), null);
-//			System.out.println("Time to query in " + n[i] + " entities and " + m[i] + " relationship is " + time);
-		}
-		long endTime = System.currentTimeMillis();
-		System.out.println("Time to init DatabaseGeneration: " + (endTime - startTime));
 		Query query = new Query();
-//		query.Query1(dbGen.getInsertData().getConnection());
-//		query.Query2(dbGen.getInsertData().getConnection());
-		query.Query3(dbGen.getInsertData().getConnection());		
-//		query.Query6(dbGen.getInsertData().getConnection());
+		int[] n = {2000000};
+		int[] m = {4000000};
+		DBGeneration dbGen = new DBGeneration();
+		for(int i = 0; i < 1; i++) {
+//			Tạo database
+//			dbGen.genDatabase(n[i], m[i]);
+//			Truy vấn
+			query.Query1(dbGen.getInsertData().getConnection());
+			query.Query2(dbGen.getInsertData().getConnection());
+			query.Query3(dbGen.getInsertData().getConnection());		
+			query.Query4(dbGen.getInsertData().getConnection());
+			query.Query5(dbGen.getInsertData().getConnection());
+			query.Query6(dbGen.getInsertData().getConnection());
+			query.Query7(dbGen.getInsertData().getConnection());		
+			query.Query8(dbGen.getInsertData().getConnection());
+			query.Query9(dbGen.getInsertData().getConnection());
+			query.Query10(dbGen.getInsertData().getConnection());
+			query.Query11(dbGen.getInsertData().getConnection());		
+			query.Query12(dbGen.getInsertData().getConnection());
+			query.Query13(dbGen.getInsertData().getConnection());
+			query.Query14(dbGen.getInsertData().getConnection());
+			query.Query15(dbGen.getInsertData().getConnection());		
+			query.Query16(dbGen.getInsertData().getConnection());
+			query.Query17(dbGen.getInsertData().getConnection());
+			query.Query18(dbGen.getInsertData().getConnection());
+			query.Query19(dbGen.getInsertData().getConnection());		
+			query.Query20(dbGen.getInsertData().getConnection());
+		}
 		dbGen.getInsertData().closeConnection();
 	}
 }
