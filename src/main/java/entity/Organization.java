@@ -18,8 +18,8 @@ public class Organization extends Entity {
 		this.headquarter = headquater;
 	}
 
-	public int getNoOrganization() {
-		return noOrganization;
-	}
+//	public int getNoOrganization() {
+//		return noOrganization;
+//	}
 
 }

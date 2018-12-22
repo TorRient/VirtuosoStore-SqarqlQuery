@@ -1,43 +1,23 @@
-package entitygeneration;
+package entityGeneration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import ReadFile.readFile;
 import entity.Time;
 
 public class TimeGen extends EntityGen {
+	readFile readfile = new readFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		labelList = readfile.readerFile(fileName);
 		
-		while(scanner.hasNextLine()) {
-			labelList.add(scanner.nextLine());
-		}
 	}
 	
 	public void setDescriptionList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			descriptionList.add(scanner.nextLine());
-		}
+		descriptionList = readfile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {

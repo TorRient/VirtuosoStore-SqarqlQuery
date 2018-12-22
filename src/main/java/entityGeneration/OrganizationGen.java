@@ -1,58 +1,27 @@
-package entitygeneration;
+package entityGeneration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import ReadFile.readFile;
 import entity.Organization;
 
 public class OrganizationGen extends EntityGen{
+	readFile readfile = new readFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	private static List<String> headquarterList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			labelList.add(scanner.nextLine());
-		}
+		labelList = readfile.readerFile(fileName);
 	}
 	
 	public void setDescriptionList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			descriptionList.add(scanner.nextLine());
-		}
+		descriptionList = readfile.readerFile(fileName);
 	}
 	
 	public void setHeadquarterList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			headquarterList.add(scanner.nextLine());
-		}
+		headquarterList = readfile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {

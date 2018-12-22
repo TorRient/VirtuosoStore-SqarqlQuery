@@ -1,12 +1,10 @@
-package ConnectDatabase;
+package DatabaseGeneration;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.ValueFactory;
-import org.eclipse.rdf4j.model.impl.TreeModel;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
-import org.eclipse.rdf4j.model.vocabulary.XMLSchema;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
@@ -19,8 +17,8 @@ import entity.Person;
 import entity.Time;
 import virtuoso.rdf4j.driver.VirtuosoRepository;
 
-public class InsertData {
-	private String NAMESPACE = "http://www.example.org/ontology/";
+public class DBGeneration {
+	private String NAMESPACE = "http://www.example.org/";
 
 	// Bộ namespace chuẩn bị khởi tạo
 	private String personNamespace = "http://www.example.org/person/";
@@ -49,9 +47,7 @@ public class InsertData {
 	private IRI TIMETYPE;
 	private IRI EVENTTYPE;
 
-	private Model model;
-
-	public InsertData() {
+	public DBGeneration() {
 		Repository myRepository1 = new VirtuosoRepository("jdbc:virtuoso://localhost:1111", "dba", "dba");
 		connection = myRepository1.getConnection();
 
@@ -64,22 +60,16 @@ public class InsertData {
 		JOB = valueFactory.createIRI(NAMESPACE, "job");
 		HEADQUARTER = valueFactory.createIRI(NAMESPACE, "headquarter");
 
-		PERSONTYPE = valueFactory.createIRI(NAMESPACE, "Person");
-		ORGANIZATIONTYPE = valueFactory.createIRI(NAMESPACE, "Organization");
-		LOCATIONTYPE = valueFactory.createIRI(NAMESPACE, "Location");
-		COUNTRYTYPE = valueFactory.createIRI(NAMESPACE, "Country");
-		TIMETYPE = valueFactory.createIRI(NAMESPACE, "Time");
-		EVENTTYPE = valueFactory.createIRI(NAMESPACE, "Event");
-
-		model = new TreeModel();
+		PERSONTYPE = valueFactory.createIRI(NAMESPACE, "PERSONTYPE");
+		ORGANIZATIONTYPE = valueFactory.createIRI(NAMESPACE, "ORGANIZATIONTYPE");
+		LOCATIONTYPE = valueFactory.createIRI(NAMESPACE, "LOCATIONTYPE");
+		COUNTRYTYPE = valueFactory.createIRI(NAMESPACE, "COUNTRYTYPE");
+		TIMETYPE = valueFactory.createIRI(NAMESPACE, "TIMETYPE");
+		EVENTTYPE = valueFactory.createIRI(NAMESPACE, "EVENTTYPE");
 	}
 
 	public RepositoryConnection getConnection() {
 		return connection;
-	}
-
-	public Model getModel() {
-		return model;
 	}
 
 	public void closeConnection() {
@@ -94,12 +84,12 @@ public class InsertData {
 		}
 	}
 
-	private IRI insertEntity(Entity entity, String nameSpace, IRI type) {
+	private IRI addEntity(Entity entity, String nameSpace, IRI type, Model model) {
 		IRI iri = valueFactory.createIRI(nameSpace, entity.getId());
 		Literal label = valueFactory.createLiteral(entity.getLabel());
 		Literal description = valueFactory.createLiteral(entity.getDescription());
 		Literal extractedLink = valueFactory.createLiteral(entity.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(entity.getExtractedDate(), XMLSchema.DATE);
+		Literal extractedDate = valueFactory.createLiteral(entity.getExtractedDate());
 
 		model.add(iri, RDF.TYPE, type);
 		model.add(iri, LABEL, label);
@@ -109,12 +99,12 @@ public class InsertData {
 		return iri;
 	}
 
-	private IRI insertEntity(Person person) {
+	private IRI addEntity(Person person, Model model) {
 		IRI iri = valueFactory.createIRI(personNamespace, person.getId());
 		Literal label = valueFactory.createLiteral(person.getLabel());
 		Literal description = valueFactory.createLiteral(person.getDescription());
 		Literal extractedLink = valueFactory.createLiteral(person.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(person.getExtractedDate(), XMLSchema.DATE);
+		Literal extractedDate = valueFactory.createLiteral(person.getExtractedDate());
 		Literal age = valueFactory.createLiteral(person.getAge());
 		Literal job = valueFactory.createLiteral(person.getJob());
 
@@ -128,12 +118,12 @@ public class InsertData {
 		return iri;
 	}
 
-	private IRI insertEntity(Organization organization) {
+	private IRI addEntity(Organization organization,Model model) {
 		IRI iri = valueFactory.createIRI(organizationNamespace, organization.getId());
 		Literal label = valueFactory.createLiteral(organization.getLabel());
 		Literal description = valueFactory.createLiteral(organization.getDescription());
 		Literal extractedLink = valueFactory.createLiteral(organization.getExtractedLink());
-		Literal extractedDate = valueFactory.createLiteral(organization.getExtractedDate(), XMLSchema.DATE);
+		Literal extractedDate = valueFactory.createLiteral(organization.getExtractedDate());
 		Literal headquarter = valueFactory.createLiteral(organization.getHeadquater());
 
 		model.add(iri, RDF.TYPE, ORGANIZATIONTYPE);
@@ -145,19 +135,19 @@ public class InsertData {
 		return iri;
 	}
 
-	public IRI insertEntity(Entity entity) {
+	public IRI addEntity(Entity entity,Model model) {
 		if (entity instanceof Person) {
-			return insertEntity((Person) entity);
+			return addEntity((Person) entity,model);
 		} else if (entity instanceof Organization) {
-			return insertEntity((Organization) entity);
+			return addEntity((Organization) entity,model);
 		} else if (entity instanceof Location) {
-			return insertEntity((Location) entity, locationNamespace, LOCATIONTYPE);
+			return addEntity((Location) entity, locationNamespace, LOCATIONTYPE,model);
 		} else if (entity instanceof Country) {
-			return insertEntity((Country) entity, countryNamespace, COUNTRYTYPE);
+			return addEntity((Country) entity, countryNamespace, COUNTRYTYPE,model);
 		} else if (entity instanceof Time) {
-			return insertEntity((Time) entity, timeNamespace, TIMETYPE);
+			return addEntity((Time) entity, timeNamespace, TIMETYPE,model);
 		} else if (entity instanceof Event) {
-			return insertEntity((Event) entity, eventNamespace, EVENTTYPE);
+			return addEntity((Event) entity, eventNamespace, EVENTTYPE,model);
 		}
 		return null;
 	}
@@ -166,7 +156,7 @@ public class InsertData {
 		return valueFactory.createIRI(relationshipNamespace, relationshipDescription);
 	}
 
-	public void insertStatement(IRI entity1, IRI relationship, IRI entity2) {
+	public void insertStatement(IRI entity1, IRI relationship, IRI entity2, Model model) {
 		model.add(entity1, relationship, entity2);
 	}
 

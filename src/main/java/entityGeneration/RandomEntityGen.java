@@ -1,11 +1,11 @@
-package entitygeneration;
+package entityGeneration;
 
 import java.util.Random;
 
 import entity.Entity;
 
 public class RandomEntityGen {
-	private static final Random RANDOM = new Random();
+	private final Random RANDOM = new Random();
 	private static final EntityGen Entity = new EntityGen();
 	private static final PersonGen Person = new PersonGen();
 	private static final OrganizationGen Organization = new OrganizationGen();

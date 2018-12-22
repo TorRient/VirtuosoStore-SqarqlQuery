@@ -29,8 +29,8 @@ public class Person extends Entity {
 		this.job = job;
 	}
 
-	public int getNoPerson() {
-		return noPerson;
-	}
+//	public int getNoPerson() {
+//		return noPerson;
+//	}
 
 }

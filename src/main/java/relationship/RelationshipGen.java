@@ -1,28 +1,22 @@
 package relationship;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
+import ReadFile.readFile;
 
 public class RelationshipGen {
-	private static final Random RANDOM = new Random();
+	private Random RANDOM = new Random();
+	readFile readfile = new readFile();
 	public List<String> setRelationshipDescriptionList(String fileName) {
-		List<String> relationshipDescriptionList = new ArrayList<String>();
-		Scanner scanner = null;
-		relationshipDescriptionList.clear();
-		try {
-			scanner = new Scanner(new File(fileName));
-			while(scanner.hasNextLine()) {
-				relationshipDescriptionList.add(scanner.nextLine().replace(" ", "_"));
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		List<String> relationship = new ArrayList<String>();
+		List<String> relationshipList = new ArrayList<String>();
+		relationship = readfile.readerFile(fileName);
+		for(int i = 0 ; i<relationship.size(); i++) {
+			relationshipList.add(relationship.get(i).replace(" ", "_"));
 		}
-		return relationshipDescriptionList;
+		return relationshipList;
 	}
 	
 	public String genRandomRelationshipDescription(List<String> relationship) {

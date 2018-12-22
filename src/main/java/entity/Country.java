@@ -9,8 +9,8 @@ public class Country extends Entity {
 		noCountry++;
 	}
 
-	public int getNoCountry() {
-		return noCountry;
-	}
+//	public int getNoCountry() {
+//		return noCountry;
+//	}
 
 }

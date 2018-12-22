@@ -1,57 +1,26 @@
-package entitygeneration;
+package entityGeneration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import ReadFile.readFile;
 import entity.Person;
 
 public class PersonGen extends EntityGen{
+	readFile readfile = new readFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	private static List<String> jobList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			labelList.add(scanner.nextLine());
-		}
+		labelList = readfile.readerFile(fileName);
 	}
 	
 	public void setDescriptionList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			descriptionList.add(scanner.nextLine());
-		}
+		descriptionList = readfile.readerFile(fileName);
 	}
 	public void setJobList(String fileName) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new File(fileName));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNextLine()) {
-			jobList.add(scanner.nextLine());
-		}
+		jobList = readfile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {
@@ -66,7 +35,7 @@ public class PersonGen extends EntityGen{
 	}
 	
 	public int generateRandomAge() {
-		return this.getRandom().nextInt(100) + 5;
+		return this.getRandom().nextInt(70) + 5;
 	}
 	
 	public Person generatePerson() {
