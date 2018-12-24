@@ -13,7 +13,7 @@ Begin Edu Fair-Ho Chi Minh City (Autumn  Edition)
 Begin Edu Fair- Hanoi (Autumn  Edition)
 Vietnam International Jewelry Fair (VIJF)
 International Downstream-Tech Vietnam
-Vietnam  Foodexpo
+Vietnam Foodexpo
 Vietnam Two Wheels Vehicle International Exhibition (Vietnam Cycle)
 Vietnam International Bicycle Exhibition (Vietnam Cycle)
 International Conference On Electrical Engineering And Electronics Communication System (ICEEECS)
@@ -48,17 +48,20 @@ International Conference on Materials Engineering and Applications (ICMEA)
 International Conference on Petroleum and Petrochemical Engineering (ICPPE)
 Vietnam Power Development Summit (VDPS)
 Vietnam Tech Conference
+Sugarex Vietnam
 International Conference on Machine Learning and Soft Computing (ICMLSC)
 International Conference on Computer Research and Development (ICCRD)
 International Conference on BioMedical Technology (ICBMT)
 International Conference on Intelligent Information Technology (ICIIT)
 Linden Boarding School Tour
+Sugarex Vietnam
 Asia Tour Ho Chi Minh City
 Linden Fair Ho Chi Minh City
 Vietnam Tour Ho Chi Minh City
 International Conference On Environment And Renewable Energy (ICERE)
 Automechanika Ho Chi Minh City (AMHCMC)
 Oil & Gas Tech Asia (OGTA)
+Sugarex Vietnam
 Asia Expo Ho Chi Minh City
 Vietnam International Furniture & Home Accessories Fair (VIFA-EXPO)
 AAE Higher Education Spring Fair
@@ -70,6 +73,7 @@ International Congress of the Asia Pacific Society of Infection Control (ICAPSIC
 Vietnam International Advertising Equipment and Technology Exhibition (VIETAD)
 Railway Infrastructure Summit Hanoi
 HVACR Vietnam
+Sugarex Vietnam
 Shop & Store Vietnam (SSV)
 Solar Show Vietnam
 The Wind Show Vietnam
@@ -85,6 +89,7 @@ Lifestyle Vietnam
 Fig Working Week Hanoi
 Food & Hotel Vietnam (FHV)
 Hanoi Plas Vietnam
+Sugarex Vietnam
 Vietnam Int'l Cafe Show
 International Conference on Civil Engineering (ICOCE)
 International Conference on Materials Engineering and Functional Materials (ICMFM)
@@ -104,6 +109,7 @@ International Conference on Innovation, Knowledge, and Management (ICIKM)
 World Conference on e-Education, e-Business and e-Commerce (WCEEE)
 Rubber & Tire Vietnam
 MTA Vietnam
+Vietnam Foodexpo
 International Conference on Data Science in Business, Finance and Industry (ISSAT DSBFI Vietnam)
 International Footwear & Leather Products Exhibition  Vietnam (IFLE Vietnam)
 Vietnam International Electrical Technology & Equipment Exhibition (Vietnam ETE)
@@ -111,6 +117,7 @@ Vietnam International Advertising Equipment and Technology Exhibition
 Vietnam Medi-Pharm Expo (MediPharm Expo)
 VietFood & Beverage - Vietnam
 Intermold Vietnam
+Vietnam Foodexpo
 Vietnam Manufacturing Expo (VME)
 Industrial Components & Subcontracting Vietnam Hanoi
 Industrial Components & Subcontracting Vietnam Ho Chi Minh City
@@ -123,10 +130,12 @@ Mekong Beauty Show (MBS)
 WSW
 The Popularization of Astronomy
 Semana Mundial do Espaço - Angola
+Vietnam Foodexpo
 Astro reading
 Astronomía de Posición
 Función especial - Planetario para Personas Ciegas
 Observación por telescopio
+Vietnam Foodexpo
 Proyección en vivo del Lanzamiento del SAOCOM 1A
 Semana de las Ciencias - Día de las Ciencias del Espacio
 Viaje por el Espacio / Journey to space

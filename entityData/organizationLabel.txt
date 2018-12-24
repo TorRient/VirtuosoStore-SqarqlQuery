@@ -39,6 +39,7 @@ IKEA
 Wal-Mart
 Hyundai
 Beko
+Vietnam  Foodexpo
 Kellogg Company
 Deere & Company
 L'Oréal
@@ -63,6 +64,7 @@ Pizza Hut
 Vodafone
 Shell Oil Company
 BlackBerry
+Vietnam  Foodexpo
 Harley-Davidson Motor Company
 Kleenex
 Moët et Chandon
@@ -80,6 +82,7 @@ IBM
 Kia Motors
 Xerox
 Prada
+KFC
 Google
 Intel Corporation
 Adobe Systems
@@ -90,6 +93,7 @@ McDonald's
 Burberry
 Tiffany & Co.
 H&M
+KFC
 Honda Motor Company, Ltd
 Nokia
 General Electric
@@ -97,6 +101,7 @@ Cisco Systems, Inc.
 Mercedes-Benz
 VISA
 BMW
+KFC
 100 People: A World Portrait
 3HS India
 Action for Happiness
@@ -156,6 +161,7 @@ Environmental Vulnerability Index
 Erasmus Happiness Economics Research Organisation 
 ERCAS European Research Centre for Anti-Corruption and State-Building
 Eurochild
+KFC
 EUROCITIES
 Eurofound
 European Centre for Social Welfare Policy and Research
@@ -195,6 +201,7 @@ Hungarian Central Statistics Office
 Hunger And Nutrition Commitment Index
 Hybon Elevators and Escalators Pvt. Ltd.
 i-genius
+KFC
 IFAD International Fund for Agricultural Development 
 Ilifa Labantwana
 Imagina Mexico

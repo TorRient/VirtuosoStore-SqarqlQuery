@@ -1,4 +1,4 @@
-package DatabaseGeneration;
+package databasegeneration;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;

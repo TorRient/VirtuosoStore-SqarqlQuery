@@ -1,22 +1,22 @@
-package entityGeneration;
+package entitygeneration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ReadFile.readFile;
-import entity.Country;
+import entity.Event;
+import readfile.ReadFile;
 
-public class CountryGen extends EntityGen{
-	readFile readfile = new readFile();
+public class EventGen extends EntityGen {
+	ReadFile readFile = new ReadFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		labelList = readfile.readerFile(fileName);
+		labelList = readFile.readerFile(fileName);
 	}
 	
 	public void setDescriptionList(String fileName) {
-		descriptionList = readfile.readerFile(fileName);
+		descriptionList = readFile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {
@@ -27,7 +27,7 @@ public class CountryGen extends EntityGen{
 		return descriptionList.get(this.getRandom().nextInt(descriptionList.size()));
 	}
 	
-	public Country generateCountry() {
-		return new Country(this.generateRandomLabel(), this.generateRandomDescription(), this.generateRandomExtractedLink(), this.generateRandomExtractedDate());
+	public Event generateEvent() {
+		return new Event(this.generateRandomLabel(), this.generateRandomDescription(), this.generateRandomExtractedLink(), this.generateRandomExtractedDate());
 	}
 }

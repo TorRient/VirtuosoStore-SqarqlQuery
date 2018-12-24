@@ -106,15 +106,18 @@ Pekanbaru, Indonesia
 Majuro, Marshall Islands
 Ibadan, Nigeria
 Mérida, Mexico
+Palmas, Brazil
 Munich, Germany
 Nottingham, United Kingdom
 São José do Rio Preto, Brazil
 Padang, Indonesia
 Blantyre, Malawi
+Palmas, Brazil
 Stockholm, Sweden
 Yakutsk, Russia
 Kanazawa, Japan
 Trenton, United States
+Palmas, Brazil
 Matsue, Japan
 Multan, Pakistan
 Oslo, Norway
@@ -128,6 +131,7 @@ Suva, Fiji
 Agra, India
 Montreal, Canada
 Vadsø, Norway
+Palmas, Brazil
 Flensburg, Germany
 Hobart, Australia
 Amman, Jordan
@@ -142,6 +146,7 @@ Lobamba, Swaziland
 Hamilton, United Kingdom
 Pristina, Serbia
 Iquitos, Peru
+Palmas, Brazil
 Prague, Czech Republic
 Lillehammer, Norway
 Abu Dhabi, United Arab Emirates
@@ -150,6 +155,7 @@ Fort Wayne, United States
 Wellington, New Zealand
 Dodoma, Tanzania
 Sinop, Brazil
+Palmas, Brazil
 Djibouti, Djibouti
 Cebu City, Philippines
 Handan,China
@@ -158,6 +164,7 @@ Port Hedland, Australia
 Toyama, Japan
 Simferopol, Ukraine
 Umeå, Sweden
+Palmas, Brazil
 La Paz, Bolivia
 Assis, Brazil
 Dongguan,China
@@ -180,6 +187,7 @@ Sacramento, United States
 Murmansk, Russia
 Alert, Canada
 Horta, Portugal
+Palmas, Brazil
 Kumamoto, Japan
 Indianapolis, United States
 Saint John, Canada
@@ -190,6 +198,7 @@ Wonsan, North Korea
 Orlando, United States
 Luxembourg, Luxembourg
 Dakar, Senegal
+Palmas, Brazil
 Mersin, Turkey
 Enschede, Netherlands
 Luleå, Sweden
@@ -198,9 +207,11 @@ Lahti, Finland
 Nassau, Bahamas
 Jayapura, Indonesia
 Ilhéus, Brazil
+Palmas, Brazil
 Lilongwe, Malawi
 Shenzhen,China
 Istanbul, Turkey
+Palmas, Brazil
 Kingston, Jamaica
 São José dos Campos, Brazil
 Columbia, United States
@@ -225,6 +236,7 @@ Nukus, Uzbekistan
 Basel, Switzerland
 Southampton, United Kingdom
 Victoria, Canada
+Palmas, Brazil
 Sitka, United States
 Rome, Italy
 Ahmedabad, India
@@ -234,6 +246,7 @@ Jerusalem, Israel
 Basra, Iraq
 Iqaluit, Canada
 Qingdao,China
+Palmas, Brazil
 Lahore, Pakistan
 Sekondi-Takoradi, Ghana
 Darwin, Australia

@@ -1,7 +1,7 @@
 package entity;
 
 public class Organization extends Entity {
-	private static int noOrganization = 0;
+	public static int noOrganization = 0;
 	private String headquarter;
 
 	public Organization(String label, String description,String headquarter, String extractedLink, String extractedDate) {

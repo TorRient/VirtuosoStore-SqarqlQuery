@@ -1,11 +1,11 @@
-package ReadFile;
+package readfile;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class readFile {
+public class ReadFile {
 	public ArrayList<String> readerFile(String fileName) {
 		ArrayList<String> listText = new ArrayList<String>();
 		Scanner scanner = null;

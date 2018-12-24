@@ -1,26 +1,26 @@
-package entityGeneration;
+package entitygeneration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ReadFile.readFile;
 import entity.Person;
+import readfile.ReadFile;
 
 public class PersonGen extends EntityGen{
-	readFile readfile = new readFile();
+	ReadFile readFile = new ReadFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	private static List<String> jobList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		labelList = readfile.readerFile(fileName);
+		labelList = readFile.readerFile(fileName);
 	}
 	
 	public void setDescriptionList(String fileName) {
-		descriptionList = readfile.readerFile(fileName);
+		descriptionList = readFile.readerFile(fileName);
 	}
 	public void setJobList(String fileName) {
-		jobList = readfile.readerFile(fileName);
+		jobList = readFile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {

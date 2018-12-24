@@ -1,23 +1,23 @@
-package entityGeneration;
+package entitygeneration;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import ReadFile.readFile;
+import readfile.ReadFile;
 
 public class EntityGen {
-	readFile readfile = new readFile();
-	private Random RANDOM = new Random();
+	ReadFile readFile = new ReadFile();
+	private static final Random RANDOM = new Random();
 	private static List<String> extractedLinkList = new ArrayList<String>();
 	private static List<String> extractedDateList = new ArrayList<String>();
 
 	public void setExtractedDateList(String fileName) {
-		extractedDateList = readfile.readerFile(fileName);
+		extractedDateList = readFile.readerFile(fileName);
 	}
 
 	public void setExtractedLinkList(String fileName) {
-		extractedLinkList = readfile.readerFile(fileName);
+		extractedLinkList = readFile.readerFile(fileName);
 	}
 
 	public String generateRandomExtractedLink() {

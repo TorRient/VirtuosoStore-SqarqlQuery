@@ -1,27 +1,27 @@
-package entityGeneration;
+package entitygeneration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ReadFile.readFile;
 import entity.Organization;
+import readfile.ReadFile;
 
 public class OrganizationGen extends EntityGen{
-	readFile readfile = new readFile();
+	ReadFile readFile = new ReadFile();
 	private static List<String> labelList = new ArrayList<String>();
 	private static List<String> descriptionList = new ArrayList<String>();
 	private static List<String> headquarterList = new ArrayList<String>();
 	
 	public void setLabelList(String fileName) {
-		labelList = readfile.readerFile(fileName);
+		labelList = readFile.readerFile(fileName);
 	}
 	
 	public void setDescriptionList(String fileName) {
-		descriptionList = readfile.readerFile(fileName);
+		descriptionList = readFile.readerFile(fileName);
 	}
 	
 	public void setHeadquarterList(String fileName) {
-		headquarterList = readfile.readerFile(fileName);
+		headquarterList = readFile.readerFile(fileName);
 	}
 	
 	public String generateRandomLabel() {

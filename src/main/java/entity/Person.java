@@ -1,7 +1,7 @@
 package entity;
 
 public class Person extends Entity {
-	private static int noPerson = 0;
+	public static int noPerson = 0;
 	private int age;
 	private String job;
 

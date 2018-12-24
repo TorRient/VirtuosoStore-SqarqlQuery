@@ -1,4 +1,4 @@
-package InsertData;
+package insertdata;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.impl.TreeModel;
 
-import DatabaseGeneration.DBGeneration;
+import databasegeneration.DBGeneration;
 // Dùng để so sánh
 import entity.Country;
 import entity.Entity;
@@ -17,7 +17,7 @@ import entity.Location;
 import entity.Organization;
 import entity.Person;
 import entity.Time;
-import entityGeneration.RandomEntityGen;
+import entitygeneration.RandomEntityGen;
 import relationship.RelationshipGen;
 
 public class InsertDB {
@@ -25,29 +25,6 @@ public class InsertDB {
 
 	private static int noEntity = 0;
 	private static int noRelationship = 0;
-
-	private String extractLinkFileName = "entityData/extractLink.txt";
-	private String extractTimeFileName = "entityData/extractTime.txt";
-
-	private String personLabelFileName = "entityData/personLabel.txt";
-	private String personDescriptionFileName = "entityData/personDescription.txt";
-	private String personJobFileName = "entityData/personJob.txt";
-
-	private String organizationLabelFileName = "entityData/organizationLabel.txt";
-	private String organizationDescriptionFileName = "entityData/organizationDescription.txt";
-	private String headquarterFileName = "entityData/headquarter.txt";
-
-	private String countryLabelFileName = "entityData/countryLabel.txt";
-	private String countryDescriptionFileName = "entityData/countryDescription.txt";
-
-	private String locationLabelFileName = "entityData/locationLabel.txt";
-	private String locationDescriptionFileName = "entityData/locationDescription.txt";
-
-	private String timeLabelFileName = "entityData/timeLabel.txt";
-	private String timeDescriptionFileName = "entityData/timeDescription.txt";
-
-	private String eventLabelFileName = "entityData/eventLabel.txt";
-	private String eventDescriptionFileName = "entityData/eventDescription.txt";
 
 	private DBGeneration DBgeneration;
 	private RandomEntityGen randomEntityGen;
@@ -97,6 +74,22 @@ public class InsertDB {
 		randomEntityGen = new RandomEntityGen();
 		relationshipGen = new RelationshipGen();
 		// Read file entity
+		String extractLinkFileName = "entityData/extractLink.txt";
+		String extractTimeFileName = "entityData/extractTime.txt";
+		String personLabelFileName = "entityData/personLabel.txt";
+		String personDescriptionFileName = "entityData/personDescription.txt";
+		String personJobFileName = "entityData/personJob.txt";
+		String organizationLabelFileName = "entityData/organizationLabel.txt";
+		String organizationDescriptionFileName = "entityData/organizationDescription.txt";
+		String headquarterFileName = "entityData/headquarter.txt";
+		String countryLabelFileName = "entityData/countryLabel.txt";
+		String countryDescriptionFileName = "entityData/countryDescription.txt";
+		String locationLabelFileName = "entityData/locationLabel.txt";
+		String locationDescriptionFileName = "entityData/locationDescription.txt";
+		String timeLabelFileName = "entityData/timeLabel.txt";
+		String timeDescriptionFileName = "entityData/timeDescription.txt";
+		String eventLabelFileName = "entityData/eventLabel.txt";
+		String eventDescriptionFileName = "entityData/eventDescription.txt";
 		randomEntityGen.setEntityGeneration(extractLinkFileName, extractTimeFileName);
 		randomEntityGen.setPersonGeneration(personLabelFileName, personDescriptionFileName, personJobFileName);
 		randomEntityGen.setOrganizationGeneration(organizationLabelFileName, organizationDescriptionFileName,headquarterFileName);
@@ -173,8 +166,10 @@ public class InsertDB {
 							eventIRIList.add(DBgeneration.addEntity(entity, model));
 						}
 					}
+					System.out.println("Xong" + num);
 					noEntity = num;
 					DBgeneration.getConnection().add(model);
+					System.gc();
 				}
 			} else {
 				Model model = new TreeModel();
@@ -201,6 +196,7 @@ public class InsertDB {
 				}
 				noEntity = numberOfEntity;
 				DBgeneration.getConnection().add(model);
+				System.gc();
 			}
 		}
 		System.out.println("Khởi tạo model entity xong");
@@ -391,6 +387,7 @@ public class InsertDB {
 					}
 					noRelationship = num;
 					DBgeneration.getConnection().add(model);
+					System.gc();
 				}
 			} else {
 				Model model = new TreeModel();
@@ -571,6 +568,7 @@ public class InsertDB {
 				}
 				noRelationship = numberOfRelationship;
 				DBgeneration.getConnection().add(model);
+				System.gc();
 			}
 		}
 	}

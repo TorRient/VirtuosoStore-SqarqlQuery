@@ -1,4 +1,4 @@
-package Query;
+package query;
 
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -17,9 +17,9 @@ public class Query {
 		queryString += "WHERE {";
 		queryString += "?s rdf:type label:EVENTTYPE .\n";
 		queryString += "?s ?p ?o .\n";
-		queryString += " FILTER (?s = event:Event1998 && ?p = label:label)";
+		queryString += " FILTER (?s = event:Event1 && ?p = label:label)";
 		queryString += "}";
-		this.resultQUERY1(queryString, connection);
+		this.resultQUERY3(queryString, connection);
 	}
 
 	// In ra mô tả về Organization1
@@ -91,21 +91,18 @@ public class Query {
 		this.resultQUERY3(queryString, connection);
 	}
 
-	// Event INTERDYE ASIA do tổ chức nào chủ trì thời gian nào diễn ra ?
+	// Location Port Hedland, Australia có bao nhiêu tổ chức
 	public void Query7(RepositoryConnection connection) {
-		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
-		queryString += "PREFIX label:<http://www.example.org/> \n";
-		queryString += "SELECT ?s ?p ?o ?t\n";
-		queryString += "WHERE { \n";
-		queryString += " ?event label:label ?s .\n";
-		queryString += " ?event ?p ?org .\n";
-		queryString += " ?event ?q ?time .\n";
-		queryString += " ?org label:label ?o .\n";
-		queryString += " ?time label:label ?t .\n";
-		queryString += " FILTER (?s = \"INTERDYE ASIA\"^^<http://www.w3.org/2001/XMLSchema#string> && ?p =re:held_by && ?q = re:at) ";
+		String queryString = "PREFIX label:<http://www.example.org/> \n";
+		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
+		queryString += "SELECT count(?s) as ?o \n";
+		queryString += "WHERE {";
+		queryString += "?s label:label ?name .\n";
+		queryString += "?s rdf:type label:LOCATIONTYPE.\n";
+		queryString += "?s re:have ?c .\n";
+		queryString += " FILTER (?name = \"Port Hedland, Australia\"^^<http://www.w3.org/2001/XMLSchema#string>)";
 		queryString += "}";
-		queryString += " LIMIT 10";
-		this.resultQUERY4(queryString, connection);
+		this.resultQUERY1(queryString, connection);
 	}
 
 	// Đếm số người có mặt tại sự kiện Vietnam AutoExpo
@@ -136,20 +133,19 @@ public class Query {
 		this.resultQUERY3(queryString, connection);
 	}
 
-	// Tìm 10 người đã từng làm việc tại Sony hoặc Nokia
+	// Đếm số sư kiện xảy ra vào Oct. 27, 2009
 	public void Query10(RepositoryConnection connection) {
-		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
-		queryString += "PREFIX label:<http://www.example.org/> \n";
-		queryString += "SELECT ?s ?p ?o \n";
-		queryString += "WHERE { \n";
-		queryString += " ?per label:label ?s .\n";
-		queryString += " ?per ?p ?org .\n";
-		queryString += " ?org label:label ?o .\n";
-		queryString += " FILTER (?p = re:manage)";
-		queryString += " FILTER (?o = \"Sony\"^^<http://www.w3.org/2001/XMLSchema#string> || ?o = \"Nokia\"^^<http://www.w3.org/2001/XMLSchema#string> )";
+		String queryString = "PREFIX label:<http://www.example.org/> \n";
+		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
+		queryString += "SELECT count(?s) as ?o \n";
+		queryString += "WHERE {";
+		queryString += "?s rdf:type label:EVENTTYPE .\n";
+		queryString += "?b rdf:type label:TIMETYPE .\n";
+		queryString += "?s ?p ?b .\n";
+		queryString += "?b label:label ?a .\n";
+		queryString += " FILTER (?a = \"Oct. 27, 2009\"^^<http://www.w3.org/2001/XMLSchema#string>)";
 		queryString += "}";
-		queryString += " LIMIT 10";
-		this.resultQUERY3(queryString, connection);
+		this.resultQUERY1(queryString, connection);
 	}
 
 	// Sự kiện Sugarex Vietnam do nhưng ai tài trợ?
@@ -169,7 +165,7 @@ public class Query {
 		this.resultQUERY3(queryString, connection);
 	}
 
-	// Nếu 10 sự kiện ở Palmas, Brazil đã xảy ra.
+	// Nêu 10 sự kiện ở Palmas, Brazil đã xảy ra.
 	public void Query12(RepositoryConnection connection) {
 		String queryString = "PREFIX label:<http://www.example.org/> \n";
 		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
@@ -202,22 +198,24 @@ public class Query {
 		this.resultQUERY3(queryString, connection);
 	}
 
-	// Đếm số sư kiện xảy ra vào Oct. 27, 2009
+	// Tìm 10 người đã từng làm việc tại Sony hoặc Nokia
 	public void Query14(RepositoryConnection connection) {
-		String queryString = "PREFIX label:<http://www.example.org/> \n";
-		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
-		queryString += "SELECT count(?s) as ?o \n";
-		queryString += "WHERE {";
-		queryString += "?s rdf:type label:EVENTTYPE .\n";
-		queryString += "?b rdf:type label:TIMETYPE .\n";
-		queryString += "?s ?p ?b .\n";
-		queryString += "?b label:label ?a .\n";
-		queryString += " FILTER (?a = \"Sep. 14, 1994\"^^<http://www.w3.org/2001/XMLSchema#string>)";
+		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
+		queryString += "PREFIX label:<http://www.example.org/> \n";
+		queryString += "SELECT ?s ?p ?o \n";
+		queryString += "WHERE { \n";
+		queryString += " ?per label:label ?s .\n";
+		queryString += " ?per ?p ?org .\n";
+		queryString += " ?org label:label ?o .\n";
+		queryString += " FILTER (?p = re:manage)";
+		queryString += " FILTER (?o = \"Sony\"^^<http://www.w3.org/2001/XMLSchema#string> || ?o = \"Nokia\"^^<http://www.w3.org/2001/XMLSchema#string> )";
 		queryString += "}";
-		this.resultQUERY1(queryString, connection);
+		queryString += " LIMIT 10";
+		this.resultQUERY3(queryString, connection);
 	}
 
-	// In ra những người tham dự sự kiện Vietnam  Foodexpo nhưng không tham dự Crypto Expo Asia
+	// In ra những người tham dự sự kiện Vietnam Foodexpo nhưng không tham dự Crypto
+	// Expo Asia
 	public void Query15(RepositoryConnection connection) {
 		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
 		queryString += "PREFIX person:<http://www.example.org/person/> \n";
@@ -234,7 +232,8 @@ public class Query {
 		queryString += "}";
 		this.resultQUERY1(queryString, connection);
 	}
-	// Gabbi Simoni quan tâm đến sự kiện nào, sự kiện đó diễn ra tại năm nào?
+
+	// Edith Tardiff quan tâm đến sự kiện nào, sự kiện đó diễn ra tại năm nào?
 	public void Query16(RepositoryConnection connection) {
 		String queryString = "PREFIX label:<http://www.example.org/> \n";
 		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
@@ -247,7 +246,7 @@ public class Query {
 		queryString += "?eve ?q ?time .\n";
 		queryString += "?eve label:label ?o .\n";
 		queryString += "?time label:label ?t .\n";
-		queryString += " FILTER (?s = \"Gabbi Simoni\"^^<http://www.w3.org/2001/XMLSchema#string> && ?p = re:interested_in && ?q =re:at)";
+		queryString += " FILTER (?s = \"Edith Tardiff\"^^<http://www.w3.org/2001/XMLSchema#string> && ?p = re:interested_in && ?q =re:at)";
 		queryString += "}";
 		this.resultQUERY4(queryString, connection);
 	}
@@ -287,21 +286,25 @@ public class Query {
 		queryString += "}";
 		this.resultQUERY4(queryString, connection);
 	}
-	// Location Port Hedland, Australia có bao nhiêu tổ chức
+
+	// Event INTERDYE ASIA do tổ chức nào chủ trì thời gian nào diễn ra ?
 	public void Query19(RepositoryConnection connection) {
-		String queryString = "PREFIX label:<http://www.example.org/> \n";
-		queryString += "PREFIX re:<http://www.example.org/relationship/> \n";
-		queryString += "SELECT count(?s) as ?o \n";
-		queryString += "WHERE {";
-		queryString += "?s label:label ?name .\n";
-		queryString += "?s rdf:type label:LOCATIONTYPE.\n";
-		queryString += "?s re:have ?c .\n";
-		queryString += " FILTER (?name = \"Port Hedland, Australia\"^^<http://www.w3.org/2001/XMLSchema#string>)";
+		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
+		queryString += "PREFIX label:<http://www.example.org/> \n";
+		queryString += "SELECT ?s ?p ?o ?t\n";
+		queryString += "WHERE { \n";
+		queryString += " ?event label:label ?s .\n";
+		queryString += " ?event ?p ?org .\n";
+		queryString += " ?event ?q ?time .\n";
+		queryString += " ?org label:label ?o .\n";
+		queryString += " ?time label:label ?t .\n";
+		queryString += " FILTER (?s = \"INTERDYE ASIA\"^^<http://www.w3.org/2001/XMLSchema#string> && ?p =re:held_by && ?q = re:at) ";
 		queryString += "}";
-		this.resultQUERY1(queryString, connection);
+		queryString += " LIMIT 10";
+		this.resultQUERY4(queryString, connection);
 	}
 
-	// International Exhibition VIETBUILD HANOI do ai tổ chức, người đó thuộc tổ
+	// Vietnam Foodexpo do ai tổ chức, người đó thuộc tổ
 	// chức nào, tổ chức đó thành lập năm bao nhiêu?
 	public void Query20(RepositoryConnection connection) {
 		String queryString = "PREFIX re:<http://www.example.org/relationship/> \n";
@@ -316,7 +319,7 @@ public class Query {
 		queryString += " ?org ?c ?time .\n";
 		queryString += " ?time label:label ?t .\n";
 		queryString += " FILTER (?p = re:donated_by && ?a = re:work_in)";
-		queryString += " FILTER (?s = \"International Exhibition VIETBUILD HANOI\"^^<http://www.w3.org/2001/XMLSchema#string>) ";
+		queryString += " FILTER (?s = \"Vietnam  Foodexpo\"^^<http://www.w3.org/2001/XMLSchema#string>) ";
 		queryString += "}";
 		queryString += " LIMIT 5";
 		this.resultQUERY7(queryString, connection);
@@ -330,10 +333,10 @@ public class Query {
 		while (result.hasNext()) {
 			BindingSet bind = result.next();
 			Value o = bind.getValue("o");
-			//System.out.format("%s\n", splitPrefix(o));
+			System.out.format("	%s\n", splitPrefix(o));
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("Time query: " + (endTime - startTime));
+		System.out.println("	Time query: " + (endTime - startTime));
 		result.close();
 	}
 
@@ -347,10 +350,10 @@ public class Query {
 			Value s = bind.getValue("s");
 			Value p = bind.getValue("p");
 			Value o = bind.getValue("o");
-			//System.out.format("s: %s p: %s o: %s\n", splitPrefix(s), splitPrefix(p), splitPrefix(o));
+			System.out.format("	%s %s %s\n", splitPrefix(s), splitPrefix(p), splitPrefix(o));
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("Time query: " + (endTime - startTime));
+		System.out.println("	Time query: " + (endTime - startTime));
 		result.close();
 	}
 
@@ -365,10 +368,10 @@ public class Query {
 			Value p = bind.getValue("p");
 			Value o = bind.getValue("o");
 			Value t = bind.getValue("t");
-			//System.out.format("s: %s p: %s o: %s t: %s\n", splitPrefix(s), splitPrefix(p), splitPrefix(o),splitPrefix(t));
+			System.out.format("	%s %s %s %s\n", splitPrefix(s), splitPrefix(p), splitPrefix(o), splitPrefix(t));
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("Time query: " + (endTime - startTime));
+		System.out.println("	Time query: " + (endTime - startTime));
 		result.close();
 	}
 
@@ -386,11 +389,11 @@ public class Query {
 			Value b = bind.getValue("b");
 			Value c = bind.getValue("c");
 			Value t = bind.getValue("t");
-			//System.out.format("s: %s p: %s o: %s a: %s b: %s c: %s t: %s\n", splitPrefix(s), splitPrefix(p),
-			//		splitPrefix(o), splitPrefix(a), splitPrefix(b), splitPrefix(c), splitPrefix(t));
+			System.out.format("	%s %s %s %s %s %s %s\n", splitPrefix(s), splitPrefix(p), splitPrefix(o), splitPrefix(a),
+					splitPrefix(b), splitPrefix(c), splitPrefix(t));
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("Time query: " + (endTime - startTime));
+		System.out.println("	Time query: " + (endTime - startTime));
 		result.close();
 	}
 

@@ -7,9 +7,6 @@ public class Entity {
 	private String extractedLink;
 	private String extractedDate;
 
-	public Entity() {
-
-	}
 
 	public Entity(String label, String description, String extractedLink, String extractedDate) {
 		this.label = label;

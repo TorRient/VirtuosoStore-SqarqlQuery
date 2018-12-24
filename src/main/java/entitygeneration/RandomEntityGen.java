@@ -1,4 +1,4 @@
-package entityGeneration;
+package entitygeneration;
 
 import java.util.Random;
 
